@@ -5,19 +5,18 @@ job: "Data Scientist"
 hi: "HIYA!"
 avatar_img: "/assets/img/me.png"
 intro:
-  - "Data Scientist, Engineer, and Amateur Philosopher"
   - "Fire and Ice Mixed Together"
   - "Connect with me to Learn and Grow in the field of Data Science"
 skills:
   - name: "Programming"
     icon-class: "fa fa-terminal"
-    list:["Python", "R", "SQL", "HTML/CSS", "JS", "Markdown", "Colab", "Jupyter", "Django"]
+    list: ["Python", "R", "SQL", "HTML/CSS", "JS", "Markdown", "Colab", "Jupyter", "Django"]
   - name: "Framework"
     icon-class: "fa fa-th-list"
-    list:["OpenCV", "TensorFlow", "Theano", "Keras", "Scikit", "Numpy", "Pandas", "SciPy", "YOLO/VGG", "CUDA", "Matplotlib", "Plotly", "AWS", "GCP"]
+    list: ["OpenCV", "TensorFlow", "Theano", "Keras", "Scikit", "Numpy", "Pandas", "SciPy", "YOLO/VGG", "CUDA", "Matplotlib", "Plotly", "AWS", "GCP"]
   - name: "Tools"
     icon-class: "fa fa-cogs"
-    list:["Linux", "Git", "MySQL", "MongoDB", "SQL Server", "SQLite", "PostgreSQL", "Tableau", "Power BI", "Qlik", "Google Data Studio"]
+    list: ["Linux", "Git", "MySQL", "MongoDB", "SQL Server", "SQLite", "PostgreSQL", "Tableau", "Power BI", "Qlik", "Google Data Studio"]
 
 display_name: LearnDS
 contact:
