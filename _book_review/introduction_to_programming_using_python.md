@@ -2,14 +2,14 @@
 stars: 4
 ---
 
-看的英文版
+See english version
 
-买这本书之前注意几点:
-- 这本书以 Python 3 为示例语言, 所以如果你想学 Python2, 还是别买了. 不过话说回来, 现在谁还想学 2 呢
-- 看书名即知, 这本书重点不在 Python 上, 而是以 Python 为例讲解基本的编程相关的概念, 流程和技巧等
-- 看书名即知, 这本书只是入门级别的编程教材, 概念介绍广泛, 但是很少太深入的东西
-- 深入的东西在 Bonus 章节, 这些章节书里并没有
+Before buying this book, pay attention to a few points:
+-This book uses Python 3 as an example language, so if you want to learn Python 2, don't buy it. But having said that, who wants to learn 2 now?
+-Know the title of the book, the focus of this book is not on Python, but on Python as an example to explain basic programming-related concepts, processes and techniques, etc.
+-You can know by reading the title of the book, this book is just an entry-level programming textbook, the concept is widely introduced, but rarely too in-depth things
+-The in-depth stuff is in Bonus chapters, which are not in these chapter books
 
-这本书的定位决定了其不可能把 Python 语法面面俱到的讲一遍, 尤其是 OO 相关的语法以及比如 context manager, generator 等稍微高级的语法. 但是它的本职工作做得很好, 循序渐进的介绍了过程式, OOP, GUI, 基本算法, 解题思路以及各种编程概念. 内容编排完美, 大量课后习题, 概念的引入时机也都恰到好处, 我觉得作为编程入门是很好的教材
+The positioning of this book determines that it is impossible to cover all aspects of Python grammar, especially OO-related grammars and slightly advanced grammars such as context manager, generator, etc. But its job is well done, and it is introduced step by step. Procedural, OOP, GUI, basic algorithms, problem-solving ideas and various programming concepts. The content is perfectly arranged, a large number of after-school exercises, and the timing of the concept introduction is also just right. I think it is a very good textbook as an introduction to programming
 
-如果只是想快速过一遍 Python 语法, 也可以翻一翻. 但是书中关于 Pythonic 式的惯例用法及最佳实践等讲的很少, 甚至可能与实践相悖 (比如他推崇使用 __ 打头的私有属性), 需参考其他资源, 如 <流利的 Python>
+If you just want to go through the Python grammar quickly, you can also double it. But the book’s usage of Pythonic-style conventions and best practices are rarely mentioned, and may even be contrary to practice (such as he advocates the use of __ to start the private attribute ), you need to refer to other resources, such as <fluent Python>
