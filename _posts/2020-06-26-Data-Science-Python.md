@@ -1,3 +1,11 @@
+---
+title: "Data Science with Python"
+layout: post
+category: note
+tags: [resources]
+excerpt: "Curated List of Resources for Resources for Data Science"
+---
+
 # Python Data Science Tutorials 
 - This repo contains a curated list of Python tutorials for Data Science, NLP and Machine Learning.
 
