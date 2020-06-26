@@ -1,68 +1,51 @@
-# see
-- https://www.vagrantup.com/docs/virtualbox/boxes.html
-- https://www.vagrantup.com/docs/boxes/base.html
-- https://www.mojowill.com/geek/howto-install-php-5-4-5-5-or-5-6-on-centos-6-and-centos-7/
+---
+layout : page
+title: Data Science Resources
+---
 
-# use
-- centos 6.8
-- vbox 5.1
-- vagrant 1.9.4
+**Data Science Certifications**
 
-# following convention
-0. machine setup
-    1. 32G
-    2. 512M
-    3. no USB, no Audio
-    4. vagrant user
+1. [Microsoft Professional Program for Artificial Intelligence](https://academy.microsoft.com/en-us/professional-program/tracks/artificial-intelligence/)
+2. [IBM Data Science Professional Certificate](https://www.coursera.org/specializations/ibm-data-science-professional-certificate)
 
-0.1 basic @see link2
+**Data Science Interview Preparation**
 
-1. host ssh
+1. [Comprehensive Data Science and Machine Learning Guide](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-data-science-machine-learning-interview-guide/)
+2. [109 Data Science Interview Questions and Answers for 2019](https://www.springboard.com/blog/data-science-interview-questions/)
+3. [Data Science Interview Guide](https://towardsdatascience.com/data-science-interview-guide-4ee9f5dc778)
+4. [21 Must-Know Data Science Interview Questions and Answers](https://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.html)
+5. [Data Science Question Answer](https://github.com/ShuaiW/data-science-question-answer/blob/master/README.md)
+6. [10 Essential ML Interview Questions](https://www.thelearningmachine.ai/accenture?fbclid=IwAR3wzV5MhExGBhfXNkoxhl9MGcLnus0VhInrrdLsylbIjIhRuabbFdvCcJ8)
+7. [Most Asked AI/ML Interview Questions in India](https://in.springboard.com/blog/most-asked-ai-ml-interview-questions-in-india/)
 
-在 vbox 的 guest 命令行界面不能拷贝粘贴, 十分不方便
-所以第一件是就是弄好在 host ssh 的功能
+**Resume Tips**
+1. [7-Step Guide to Making Your Data Science Resume Stand Out](https://www.springboard.com/blog/data-science-resume/)
+2. [How to Write the Perfect Data Scientist Resume](https://elitedatascience.com/resume-tips)
 
-3. nat port forwarding
-
-        如果使用 root 提示认证失败, 是因为默认禁用 root ssh, 使用 vagrant 账户
-
-2. guest addition
-
-    如果失败, 可能是因为需要运行 `yum groupinstall "Developer Tools"`
-
-3. install php5.6:link3
-
-    - php-ldap
-    - php-redis
-    - php-pdo
-
-4. php-fpm, phpunit
-    - conf: display_errors:on
-
-5. nginx, 
-    - nginx 
-    - config: user: vagrant(貌似不是必须)
-    - chmod o+x /home/vagrant
-    - iptables: http://www.binarytides.com/open-http-port-iptables-centos/
-
-6. mysql, mysql-server
-
-7. redis
-
-8. disable selinux: https://www.centos.org/docs/5/html/5.2/Deployment_Guide/sec-sel-enable-disable.html
-
-9. chkconfig nginx|php-fpm|mysqld|redis on
-
-8. vagrant pacakge
-    
-    error: cannot load such file -- vagrant-share/helper/api
-    solution?: ` vagrant plugin install vagrant-share --plugin-version 1.1.8`
-    @see:
+**Online Courses**
+1. [Machine Learning Crash Course by Google](https://developers.google.com/machine-learning/crash-course/)
+2. [Fast.ai courses (ML, DL Part 1, DL Part 2)](https://www.fast.ai/)
 
 
-9. 配置: 参考 homestead
+**Blogs**
+1. Analytics Vidya
+2. Kaggle
+3. KD Nuggets
+4. Machine Learning Mastery
+5. Analytics India Magazine
+5. Towards Data Science on Medium
 
-10. after.sh
+**Data Science Competetions**
+1. Kaggle
+2. CrowdAnalytix
+3. Driven Data
+4. Analytics Vidya
 
-    - 创建目录: /var/www/log; /storage/log, chmod 777
-    - include params
+**Books**
+1. Hands-on machine learning with scikit-learn and tensorflow
+2. Think Stats
+3. Introduction to Statistical Learning
+4. The Elements of Statistical Learning
+5. Machine Learning by Kevin P. Murphy
+6. Machine Learning Yearning
+7. Building Data Science Teams by DJ Patil
