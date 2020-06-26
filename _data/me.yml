@@ -23,6 +23,7 @@ contact:
   - {name: "Mobile", icon-class: "fa fa-phone-square", text: "+91-9648873304", link: "tel: +919648873304"}
   - {name: "Email", icon-class: "fa fa-envelope", text: "shivam.hbti2017@gmail.com", link: "mailto: shivam.hbti2017@gmail.com"}
 social:
-  - {name: "GitHub", icon-class: "fa fa-github-square", text: "GitHub", link: "https://github.com/shivampanchal"}
   - {name: "LinkedIn", icon-class: "fa fa-linkedin", text: "LinkedIn", link: "https://www.linkedin.com/in/panchalshivam"}
-  - {name: "Twitter", icon-class: "fa fa-twitter", text: "Twitter", link: "https://www.twitter.com/reac_shivam"}
+  - {name: "Twitter", icon-class: "fa fa-twitter", text: "Twitter", link: "https://www.twitter.com/reach_shivam"}
+  - {name: "Instagram", icon-class: "fa fa-instagram", text: "Instagram", link: "https://www.instagram.com/shivam_9423"}
+  - {name: "GitHub", icon-class: "fa fa-github-square", text: "GitHub", link: "https://github.com/shivampanchal"}
