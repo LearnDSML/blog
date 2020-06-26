@@ -11,7 +11,6 @@ excerpt: "Curated List of Resources for Resources for Data Science"
 
 
 
-
 ## Motivation
 
 *This part is for dummies who are new to Data Science*
@@ -22,6 +21,7 @@ First of all, Data Science is one of the hottest topics on the Computer and Inte
 
 Secondly, Our favorite programming language is *Python* nowadays for #DataScience. Python's - [Pandas](http://pandas.pydata.org/) library has full functionality for collecting and analyzing data. We use Anaconda to play with data and to create applications. 
 
+Want to support this project? Contribute..
 <a href="https://ko-fi.com/shivampanchal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## What is Data Science?
