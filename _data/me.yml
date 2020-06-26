@@ -5,7 +5,6 @@ hi: "HIYA!"
 avatar_img: "/assets/img/me2.jpg"
 intro:
   - "Welcome to my Blog!"
-  - "I am a Data Scientist and ML Engineer"
   - "Connect with me to Learn and Grow in the field of Data Science"
 skills:
   - name: "Programming"
