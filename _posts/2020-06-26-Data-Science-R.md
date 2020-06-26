@@ -1,3 +1,11 @@
+---
+title: "Data Science with R"
+layout: post
+category: note
+tags: [resources]
+excerpt: "Curated List of Resources for Data Science with R"
+---
+
 # R Data Science Tutorials
 - This repo contains a curated list of R tutorials and packages for Data Science, NLP and Machine Learning. This also serves as a reference guide for several common data analysis tasks.
 
