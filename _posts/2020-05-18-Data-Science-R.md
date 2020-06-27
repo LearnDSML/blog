@@ -2,7 +2,7 @@
 title: "Data Science with R"
 layout: post
 category: note
-tags: [resources, data science, R language]
+tags: [resources,data-science,R-language]
 excerpt: "Curated List of Resources for Data Science with R"
 ---
 
