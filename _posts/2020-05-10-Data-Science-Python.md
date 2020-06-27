@@ -2,7 +2,7 @@
 title: "Data Science with Python"
 layout: post
 category: note
-tags: [resources, python, data science]
+tags: [resources,data-science,python]
 excerpt: "Curated List of Resources for Data Science with Python"
 ---
 
