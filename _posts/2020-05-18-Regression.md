@@ -39,50 +39,7 @@ A linear regression models bases itself on the following assumptions:
 If these assumptions do not hold, then linear regression probably isn't the model for your problem. 
 
 
-
-## Variable Selection
-
-The dataset will, more often than not, contain columns that do not have any effect on the dependent variable. This becomes problematic because we don't want to add too much noise to the dataset. The variables that do not effect the dependent variable (the outcome) will usually only decrease the performance of our model, and even if they do not, there's always an additional computing complexity that comes along with them. This could influence the costs of building the model, especially when we want to do it iteratively. 
-
-There are five ways for doing feature selection while building a model:
-
-1. **All-in**: If we are aware that all the variables in the dataset are useful and are required for building the model, then we simply use all the variables that are available to us.
-2. **Backward Elimination**: The following steps need to be taken in order to conduct a backward elimination feature selection:
-	1. 	We set a significance level for a feature to stay in the model
-	2. Fit the model with all possible predictors
-	3. Consider the predictor with the highest p-value. If P > SL go to **Step 4**, otherwise go to **Step 6**
-	4.  Remove the variable
-	5.  Fit the model again, and move to **Step 3**
-	6.  Finish
-3. **Forward Selection**: Although, it may seem like a straightforward procedure, it is quite intricate in practical implementation. The following steps need to be performed in order to make a linear regressor using forward selection:
-	1. We set a significance level to enter the model
-	2. Fit regression models with each one of those independent variables and then select the one with the lowest p-value
-	3. Fit all possible regression models with the one that we selected in previous step and one additional variable.  
-	4.  Consider the model with the lowest p-value. If p < SL go to **Step 3** otherwise go to **Step 5**
-	5.  Finish and select the second last model 
-4. **Bidirectional Elimination**: The algorithm works as follows:
-	1. Select a Significance Level to enter and a Significance Level to stay in the model, viz. SLENTER and SLSTAY
-	2. Perform the next step of Forward Selection, i.e. all the new variables that are to be added must have p < SLENTER in order to enter the model
-	3. Perform all the steps of Backward Elimination, i.e. all the existing variables must have p < SLSTAY in order to stay in the model
-	4. No new variables can be added, and no new variables can be removed
-		
-> The details on variable selection by **Score Comparison** is yet to be found.
-
-The **lower the p-value** is, the **more important** a particular variable is for our model.
-
-> The term **'Step wise regression'** is often used for 2, 3, and 4 but sometimes, it refers only to 4, depending on context. 
-
-**Dummy variables:**
-The variables that are created when categorical variables are encoded, are called dummy variables. 
-
-We usually use one-hot encoding to do this, and it might seem like not including one last categorical dummy variable would cause a positive bias towards the rest of the equation but this is not the case. The coefficient for the last dummy variable is included in the b<sub>0</sub> term of the equation.
-
-*Dummy Variable trap*: One can never have all the dummy variables and b<sub>0</sub> in a model at the same time. We need to remove at least one dummy variable for each of the corresponding categorical variables because all of that will be modeled into b<sub>0</sub>. 
-
-
-
-
-## When to Use
+## When to Use Linear Regression
 
 Linear regression is a useful technique but isn’t always the right choice for 
 your data. Linear regression is a good choice when there is a linear 
@@ -158,6 +115,8 @@ As we saw, linear regression says, the data should be linear in nature, there mu
 
 Yes! there is a solution, in fact a bunch of solutions.
 
+### Generalised Regression Model
+
 There are many different analytic procedures for fitting regressive models of nonlinear nature (e.g., **Generalized Linear/Nonlinear Models (GLZ), Generalized Additive Models (GAM), etc.), or more better models called tree based regressive models, boosted tree based based, support vector machine based regression model etc**.
 
 Most of us know about Decision Trees and Random Forest, it is very common, in case of classification or regression and it is also true that they often perform far better than other regression models with minimum efforts. So, now we will be talking about tree based models such as Decision Trees and ensemble tree based like Random forests. Tree based model have proven themselves to be both reliable and effective, and are now part of any modern predictive modeler’s toolkit.
@@ -168,13 +127,15 @@ Let me explain it using some examples for clear intuition with an example. Linea
 
 Now, the question is when do you use linear regression vs Trees? Let’s suppose you are trying to predict income. The predictor variables that are available are education, age, and city. Now in a linear regression model, you have an equation with these three attributes. Fine. You’d expect higher degrees of education, higher “age” and larger cities to be associated with higher income. But what about a PhD who is 40 years old and living in Scranton Pennsylvania? Is he likely to earn more than a BS holder who is 35 and living in Upper West SIde NYC? Maybe not. Maybe education totally loses its predictive power in a city like Scranton? Maybe age is a very ineffective, weak variable in a city like NYC?
 
+### Tree based Regression 
 This is where decision trees are handy. The tree can split by city and you get to use a different set of variables for each city. Maybe Age will be a strong second-level split variable in Scranton, but it might not feature at all in the NYC branch of the tree. Education may be a stronger variable in NYC.
 
 Decision Trees, be it Random Forest or Gradient Bossted Machine based Regression, handle messier data and messier relationships better than regression models. ANd there is seldom a dataset in the real world where relationships are not messy. No wonder you will seldom see a linear regression model outperforming RF or GBM. So, this is the main idea behind tree **(Decision Tree Regression) and ensemble based models (Random Forest Regression/Gradient Boosting Regression/ Extreme Boosting Regression/Adaboost Regression)**. 
 
-**Support Vector Regression** is regression equivalent of classification with Support Vector Machine . Much like Support Vector Machines in general, the idea of SVR, is to find a plane(linear or otherwise) in a plane that allows us to make accurate predictions for future data. The regression is done in a way that all the currently available datapoints fit in an error width given by ![epsilon_small](http://mathurl.com/ybr3ffkc.png). This allows us to find a plane which fits the data best and then this can be used to make future predictions on more data. 
+### Support Vector Machine based Regression
+SVR is regression equivalent of classification with Support Vector Machine . Much like Support Vector Machines in general, the idea of SVR, is to find a plane(linear or otherwise) in a plane that allows us to make accurate predictions for future data. The regression is done in a way that all the currently available datapoints fit in an error width given by ![epsilon_small](http://mathurl.com/ybr3ffkc.png). This allows us to find a plane which fits the data best and then this can be used to make future predictions on more data. 
 
-
+## Bias, Variance Trade-Off, Under-fitting & Overfitting and Regularization Techniques
 
 Now, we will be be discussing about the following concepts in regression analysis, which are also important to understand to know Regression completely.
 
@@ -211,10 +172,10 @@ Now, how can we overcome Overfitting for a regression model? Basically there are
 - **Reduce the model complexity**
 - **Regularization**
 
-**Here we would be discussing about model fitting and Regularization in detail and how to use it to make your model more generalized.**
+Here we would be discussing about model fitting and Regularization in detail and how to use it to make your model more generalized.
 
 
-**What is Over-fitting and Under-fitting in regression models?**
+### Over-fitting and Under-fitting in regression models
 
 
 ![fitting](https://cdn-images-1.medium.com/max/720/1*u2MTHaUPMJ8rkTYjm2nHww.gif)
@@ -240,13 +201,10 @@ Following are the commonly used methodologies :
 - Pruning : Pruning is used extensively while building CART models. It simply removes the nodes which add little predictive power for the problem in hand.
 - Regularization : This is the technique we are going to discuss in more details. Simply put, it introduces a cost term for bringing in more features with the objective function. Hence, it tries to push the coefficients for many variables to zero and hence reduce cost term.
 
-Now, there are few ways you can avoid over fitting your model on training data like cross-validation sampling, reducing number of features, pruning, regularization etc. We will talk about cross-validation sampling, reducing number of features, pruning on next coming lectures.
-
-So now , I will only talk about Regularization in regression models.
+Now, there are few ways you can **avoid over fitting your model on training data like cross-validation sampling, reducing number of features, pruning, regularization etc**.
 
 Regularization basically adds the penalty as model complexity increases. Below is the equation of cost function Regularization parameter (lambda) penalizes all the parameters except intercept so that model generalizes the data and won’t over fit.
 
-Regularization basics
 A simple linear regression is an equation to estimate y, given a bunch of x. The equation looks something as follows :
 
 y = a1x1 + a2x2  + a3x3 + a4x4 .......
@@ -262,82 +220,54 @@ Now, this optimization might simply overfit the equation if x1 , x2 , x3 (indepe
 The new term in the equation is the sum of squares of the coefficients (except the bias term) multiplied by the parameter lambda. Lambda = 0 is a super over-fit scenario and Lambda = Infinity brings down the problem to just single mean estimation. Optimizing Lambda is the task we need to solve looking at the trade-off between the prediction accuracy of training sample and prediction accuracy of the hold out sample.
 
 
-
+### Ridge, Lasso and Elastic-Net Regression
 Ridge, LASSO and Elastic net algorithms work on same principle. They all try to penalize the Beta coefficients so that we can get the important variables (all in case of Ridge and few in case of LASSO). They shrink the beta coefficient towards zero for unimportant variables. These techniques are well being used when we have more numbers of predictors/features than observations. The only difference between these 3 techniques are the alpha value. If you look into the formula you can find the important of alpha.
 
 
 
 Here lambda is the penalty coefficient and it’s free to take any allowed number while alpha is selected based on the model you want to try .
 
-So if we take alpha = 0, it will become Ridge and alpha = 1 is LASSO and anything between 0–1 is Elastic net. 
+So if we take lambda = 0, it will become Ridge and lambda = 1 is LASSO and anything between 0–1 is Elastic net. 
 
 
-L1 Regularization and L2 Regularization
+##### L1 Regularization and L2 Regularization
 
-Ridge and Lasso regression are powerful techniques generally used for creating parsimonious models in presence of a ‘large’ number of features. Here ‘large’ can typically mean either of two things:
+Ridge and Lasso regression are powerful techniques generally used for creating parsimonious models in presence of a ‘large’ number of features. 
 
-Large enough to enhance the tendency of a model to overfit (as low as 10 variables might cause overfitting)
-Large enough to cause computational challenges. With modern systems, this situation might arise in case of millions or billions of features
-Though Ridge and Lasso might appear to work towards a common goal, the inherent properties and practical use cases differ substantially. If you’ve heard of them before, you must know that they work by penalizing the magnitude of coefficients of features along with minimizing the error between predicted and actual observations. These are called ‘regularization’ techniques. The key difference is in how they assign penalty to the coefficients:
+Though Ridge and Lasso might appear to work towards a common goal, the inherent properties and practical use cases differ substantially. 
 
 Ridge Regression:
-Performs L2 regularization, i.e. adds penalty equivalent to square of the magnitude of coefficients
-Minimization objective = LS Obj + α * (sum of square of coefficients)
+- Performs L2 regularization, i.e. adds penalty equivalent to square of the magnitude of coefficients
+- Minimization objective = LS Obj + α * (sum of square of coefficients)
 Lasso Regression:
-Performs L1 regularization, i.e. adds penalty equivalent to absolute value of the magnitude of coefficients
-Minimization objective = LS Obj + α * (sum of absolute value of coefficients)
+- Performs L1 regularization, i.e. adds penalty equivalent to absolute value of the magnitude of coefficients
+- Minimization objective = LS Obj + α * (sum of absolute value of coefficients)
 
 In order to create less complex (parsimonious) model when you have a large number of features in your dataset, some of the Regularization techniques used to address over-fitting and feature selection are:
 
 A regression model that uses L1 regularization technique is called Lasso Regression and model which uses L2 is called Ridge Regression.
-The key difference between these two is the penalty term.
-Ridge regression adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
 
-Here, if lambda is zero then you can imagine we get back OLS. However, if lambda is very large then it will add too much weight and it will lead to under-fitting. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
-
-Lasso Regression (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
-
-Again, if lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
-
-The key difference between these techniques is that Lasso shrinks the less important feature’s coefficient to zero thus, removing some feature altogether. So, this works well for feature selection in case we have a huge number of features.
-
-Why do we use Regularization?
+##### Why do we use Regularization?
 
 Traditional methods like cross-validation, step wise regression to handle over fitting and perform feature selection work well with a small set of features but these techniques are a great alternative when we are dealing with a large set of features.
 
-Gradient Descent Approach
 
-There is also another technique other than regularization which is also used widely to optimize the model and avoid the chances of over fitting in your model, which is called Gradient Descent.
+#### Gradient Descent Approach
 
-Gradient descent is a technique we can use to find the minimum of arbitrarily complex error functions.
+There is also another technique other than regularization which is also used widely to optimize the model and avoid the chances of over fitting in your model, which is called Gradient Descent. Gradient descent is a technique we can use to find the minimum of arbitrarily complex error functions.
 
-In gradient descent we pick a random set of weights for our algorithm and iteratively adjust those weights in the direction of the gradient of the error with respect to each weight.
-
-As we iterate, the gradient approaches zero and we approach the minimum error.
+In gradient descent we pick a random set of weights for our algorithm and iteratively adjust those weights in the direction of the gradient of the error with respect to each weight. As we iterate, the gradient approaches zero and we approach the minimum error.
 
 In machine learning we often use gradient descent with our error function to find the weights that give the lowest errors.
 
 
-
-
-
-
-
-
-Add alt text
-No alt text provided for this image
 Here is an example with a very simple function.
+
+![GradientDescent](https://media-exp1.licdn.com/dms/image/C5112AQFcw66H_NQbbg/article-inline_image-shrink_1000_1488/0?e=1598486400&v=beta&t=Qr-SjZPX_7wzAGKjpasl37kYF1MK8Cpp1uikNQU-u78)
 
 The gradient of this function is given by the following equation. We choose an random initial value for x and a learning rate of 0.1 and then start descent. On each iteration our x value is decreasing and the gradient (2x) is converging towards 0.
 
 The learning rate is a what is know as a hyper-parameter. If the learning rate is too small then convergence may take a very long time. If the learning rate is too large then convergence may never happen because our iterations bounce from one side of the minimum to the other. Choosing a suitable value for hyper-parameters is an art so try different values and plot the results until you find suitable values.
-
-Feel free to criticize! See you in the comments!!!
-
-
-
-
-
 
 
 ## Performance Criteria
