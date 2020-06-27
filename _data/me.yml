@@ -13,7 +13,7 @@ skills:
     list: ["Python", "R", "SQL", "HTML/CSS", "JS", "Markdown", "Colab", "Jupyter", "Django"]
   - name: "Framework"
     icon-class: "fa fa-th-list"
-    list: ["OpenCV", "TensorFlow", "Pytorch", "Keras", "Scikit", "Numpy/SciPy", "Pandas", "CUDA", "Matplotlib", "Plotly", "AWS/GCP"]
+    list: ["OpenCV", "TensorFlow", "Pytorch", "Keras", "Scikit", "Numpy/SciPy/Pandas", "CUDA", "PLT", "Plotly", "AWS/GCP"]
   - name: "Tools"
     icon-class: "fa fa-cogs"
     list: ["Linux", "Git", "MySQL", "MongoDB", "SQL Server", "SQLite", "PostgreSQL", "Tableau", "Power BI", "Qlik", "Data Studio"]
