@@ -2,7 +2,7 @@
 title: "Awesome Data Science"
 layout: post
 category: note
-tags: [resources, data science]
+tags: [resources, data-science]
 excerpt: "Curated List of Resources for Resources for Data Science"
 ---
 # Awesome Data Science 
