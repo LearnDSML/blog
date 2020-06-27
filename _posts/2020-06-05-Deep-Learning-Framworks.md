@@ -2,7 +2,7 @@
 title: "Deep Learning Frameworks"
 layout: post
 category: note
-tags: [resources]
+tags: [resources, deep learning]
 excerpt: "Curated List of Framworks for Deep Learning"
 ---
 
