@@ -1,7 +1,7 @@
 ---
 title: "Regression - Explained"
 layout: post
-category: note
+category: tutorial
 tags: [machine-leaning,regression,algorithms]
 excerpt: "Machine Learning Algorithms for Regression"
 ---
@@ -285,11 +285,16 @@ where **p** is the number of regressors and **n** is the sample size. Adjusted R
 ![Metrices](https://4.bp.blogspot.com/-wG7IbjTfE6k/XGUvqm7TCVI/AAAAAAAAAZU/vpH1kuKTIooKTcVlnm1EVRCXLVZM9cPNgCLcBGAs/s1600/formula-MAE-MSE-RMSE-RSquared.JPG)
 
 
+Want to support this project? Contribute..
+<a href="https://ko-fi.com/shivampanchal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+
+
 ### References
 1. https://towardsdatascience.com/introduction-to-machine-learning-algorithms-linear-regression-14c4e325882a
 2. https://machinelearningmastery.com/linear-regression-for-machine-learning/
 3. https://ml-cheatsheet.readthedocs.io/en/latest/linear_regression.html
-#. https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
-#. https://medium.com/analytics-vidhya/linear-regression-in-python-from-scratch-24db98184276
-#. https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html
-#. https://scikit-learn.org/stable/modules/generated/sklearn.compose.TransformedTargetRegressor.html
+4. https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
+5. https://medium.com/analytics-vidhya/linear-regression-in-python-from-scratch-24db98184276
+6. https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html
+7. https://scikit-learn.org/stable/modules/generated/sklearn.compose.TransformedTargetRegressor.html
