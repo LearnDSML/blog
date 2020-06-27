@@ -2,7 +2,7 @@
 title: "Regression - Explained"
 layout: post
 category: tutorial
-tags: [machine-leaning,regression,algorithms]
+tags: [ml,regression,algorithms]
 excerpt: "Machine Learning Algorithms for Regression"
 ---
 
