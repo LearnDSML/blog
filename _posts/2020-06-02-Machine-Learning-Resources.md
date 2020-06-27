@@ -2,7 +2,7 @@
 title: "Awesome Machine Learning"
 layout: post
 category: note
-tags: [resources, machine learning]
+tags: [resources, machine-learning]
 excerpt: "Curated List of Resources for Machine Learning"
 ---
 
