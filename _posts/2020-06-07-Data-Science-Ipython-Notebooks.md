@@ -1,5 +1,5 @@
 ---
-title: "Data Science with Python"
+title: "Data Science Ipython Notebooks"
 layout: post
 category: note
 tags: [resources,data-science,python,machine-learning]
