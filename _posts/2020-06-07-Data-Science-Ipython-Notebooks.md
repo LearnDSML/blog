@@ -2,7 +2,7 @@
 title: "Data Science Ipython Notebooks"
 layout: post
 category: note
-tags: [resources,data-science,python,machine-learning]
+tags: [resources,data-science,python,ml]
 excerpt: "Curated List of Resources for Data Science with Python"
 ---
 
