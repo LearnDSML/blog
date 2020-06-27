@@ -8,7 +8,7 @@ excerpt: "Machine Learning Algorithms for Regression"
 
 # Regression
 
-## Overview
+## What is Regression?
 Regression is an analysis that assesses whether one or more predictor variables or independent variables explain the dependent (target) variable. 
 
 ## Linear Regression
@@ -101,12 +101,16 @@ dependent variables is more complicated or when outputs are discrete values.
 
 - **Linear relationship**
 First, linear regression needs the relationship between the independent and dependent variables to be linear.  It is also important to check for outliers since linear regression is sensitive to outlier effects.  The linearity assumption can best be tested with scatter plots, the following two examples depict two cases, where no and little linearity is present.
+
+
 ![NonLinear](https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression01.jpg)
 ![LessNonLinear](https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression02.jpg)
 
 - **Multivariate normality**
 Secondly, the linear regression analysis requires all variables to be multivariate normal.  This assumption can best be checked with a histogram or a Q-Q-Plot.  Normality can be checked with a goodness of fit test, e.g., the Kolmogorov-Smirnov test. 
 When the data is not normally distributed a non-linear transformation (e.g., log-transformation) might fix this issue.
+
+
 ![histogram](https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression03.jpg)
 ![QQPLot](https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression04.jpg)
 
@@ -139,6 +143,7 @@ The Goldfeld-Quandt Test can also be used to test for heteroscedasticity.  The t
 
 Above, we discussed what is Regression and the assumptions or so called limitations of linear regression. Linear Regression is assumed to be the simplest machine learning algorithm the world has ever seen, and yes! it is! We also discussed how your model can give you poor predictions in real time if you don't obey the assumptions of linear regression. Whatever you are going to predict, whether it is stock value, sales or some revenue, linear regression must be handled with care if you want to get best values from it.
 
+
 ## Multiple Linear Regression
 When there are more than one independent variable (x1,x2,x3...xn) and one dependent variable (y), its called Multiple Linear Regression. Most linear Regressions are multiple linear regression itself.
 
@@ -168,6 +173,170 @@ This is where decision trees are handy. The tree can split by city and you get t
 Decision Trees, be it Random Forest or Gradient Bossted Machine based Regression, handle messier data and messier relationships better than regression models. ANd there is seldom a dataset in the real world where relationships are not messy. No wonder you will seldom see a linear regression model outperforming RF or GBM. So, this is the main idea behind tree **(Decision Tree Regression) and ensemble based models (Random Forest Regression/Gradient Boosting Regression/ Extreme Boosting Regression/Adaboost Regression)**. 
 
 **Support Vector Regression** is regression equivalent of classification with Support Vector Machine . Much like Support Vector Machines in general, the idea of SVR, is to find a plane(linear or otherwise) in a plane that allows us to make accurate predictions for future data. The regression is done in a way that all the currently available datapoints fit in an error width given by ![epsilon_small](http://mathurl.com/ybr3ffkc.png). This allows us to find a plane which fits the data best and then this can be used to make future predictions on more data. 
+
+
+
+Now, we will be be discussing about the following concepts in regression analysis, which are also important to understand to know Regression completely.
+
+- **Bias and Variance Trade off in Regression models**
+- **Under fitting and over fitting in regression models**
+- **How can we optimize our model to avoid under fitting and over fitting.**
+- **Regularization techniques**
+- **L1 - Lasso Regression**
+- **L2 - Ridge Regression**
+- **L1 and L2 -Elastic Regression**
+- **Gradient Descent**
+
+So, let's first understand what Bias and Variance means?
+
+**Bias and Variance**
+What does that bias and variance actually mean? Let us understand this by an example below.
+
+
+![BiasVariance](https://www.kdnuggets.com/wp-content/uploads/bias-and-variance.jpg)
+
+Let’s say we have model which is very accurate, therefore the error of our model will be low, meaning a low bias and low variance as shown in first figure. Similarly we can say that if the variance increases, the spread of our data point increases which results in less accurate prediction. And as the bias increases the error between our predicted value and the observed values increases. Now how this bias and variance is balanced to have a perfect model? Take a look at the image below and try to understand.
+
+
+![BiasVariance2](https://miro.medium.com/max/1506/1*oO0KYF7Z84nePqfsJ9E0WQ.png)
+
+
+![BiasVariance3](https://www.researchgate.net/profile/Yong-Huan_Yun/publication/275528741/figure/fig6/AS:667902487302146@1536251770074/The-bias-variance-tradeoff-in-modeling-Model-bias-decreases-with-increasing-model.png)
+
+
+As we add more and more parameters to our model, its complexity increases, which results in increasing variance and decreasing bias, i.e., over fitting. So we need to find out one optimum point in our model where the decrease in bias is equal to increase in variance. In practice, there is no analytical way to find this point. So how to deal with high variance or high bias? To overcome under fitting or high bias, we can basically add new parameters to our model so that the model complexity increases, and thus reducing high bias.
+
+Now, how can we overcome Overfitting for a regression model? Basically there are two methods to overcome overfitting,
+
+- **Reduce the model complexity**
+- **Regularization**
+
+**Here we would be discussing about model fitting and Regularization in detail and how to use it to make your model more generalized.**
+
+
+**What is Over-fitting and Under-fitting in regression models?**
+
+
+![fitting](https://cdn-images-1.medium.com/max/720/1*u2MTHaUPMJ8rkTYjm2nHww.gif)
+
+In above gif, the model tries to fit the best line to the trues values of the data set. Initially the model is so simple, like a linear line going across the data points. But, as the complexity of the model increases i..e. because of the higher terms being included into the model. The first case here is called under fit, the second being an optimum fit and last being an over fit.
+
+Have a look at the following graphs, which explains the same in the pictorial below.
+
+
+![trend](https://miro.medium.com/max/1660/1*9hPX9pAO3jqLrzt0IE3JzA.png)
+
+The trend in above graphs looks like a quadratic trend over independent variable X. A higher degree polynomial might have a very high accuracy on the train population but is expected to fail badly on test data set. In this post, we will briefly discuss various techniques to avoid over-fitting. And then focus on a special technique called Regularization.
+
+Over fitting happens when model learns signal as well as noise in the training data and wouldn’t perform well on new data on which model wasn’t trained on. In the example below, you can see under fitting in first few steps and over fitting in last few.
+
+#### Methods to avoid Over-fitting:
+
+
+Following are the commonly used methodologies :
+
+- Cross-Validation : Cross Validation in its simplest form is a one round validation, where we leave one sample as in-time validation and rest for training the model. But for keeping lower variance a higher fold cross validation is preferred.
+- Early Stopping : Early stopping rules provide guidance as to how many iterations can be run before the learner begins to over-fit.
+- Pruning : Pruning is used extensively while building CART models. It simply removes the nodes which add little predictive power for the problem in hand.
+- Regularization : This is the technique we are going to discuss in more details. Simply put, it introduces a cost term for bringing in more features with the objective function. Hence, it tries to push the coefficients for many variables to zero and hence reduce cost term.
+
+Now, there are few ways you can avoid over fitting your model on training data like cross-validation sampling, reducing number of features, pruning, regularization etc. We will talk about cross-validation sampling, reducing number of features, pruning on next coming lectures.
+
+So now , I will only talk about Regularization in regression models.
+
+Regularization basically adds the penalty as model complexity increases. Below is the equation of cost function Regularization parameter (lambda) penalizes all the parameters except intercept so that model generalizes the data and won’t over fit.
+
+Regularization basics
+A simple linear regression is an equation to estimate y, given a bunch of x. The equation looks something as follows :
+
+y = a1x1 + a2x2  + a3x3 + a4x4 .......
+In the above equation, a1, a2, a3 … are the coefficients and x1, x2, x3 .. are the independent variables. Given a data containing x and y, we estimate a1, a2 , a3 …based on an objective function. For a linear regression the objective function is as follows :
+
+![regularisation](https://miro.medium.com/max/2908/1*dEZxrHeNGlhfNt-JyRLpig.png)
+
+Now, this optimization might simply overfit the equation if x1 , x2 , x3 (independent variables ) are too many in numbers. Hence we introduce a new penalty term in our objective function to find the estimates of co-efficient. Following is the modification we make to the equation :
+
+
+![regularizations](https://miro.medium.com/max/3232/1*vwhvjVQiEgLcssUPX6vxig.png)
+
+The new term in the equation is the sum of squares of the coefficients (except the bias term) multiplied by the parameter lambda. Lambda = 0 is a super over-fit scenario and Lambda = Infinity brings down the problem to just single mean estimation. Optimizing Lambda is the task we need to solve looking at the trade-off between the prediction accuracy of training sample and prediction accuracy of the hold out sample.
+
+
+
+Ridge, LASSO and Elastic net algorithms work on same principle. They all try to penalize the Beta coefficients so that we can get the important variables (all in case of Ridge and few in case of LASSO). They shrink the beta coefficient towards zero for unimportant variables. These techniques are well being used when we have more numbers of predictors/features than observations. The only difference between these 3 techniques are the alpha value. If you look into the formula you can find the important of alpha.
+
+
+
+Here lambda is the penalty coefficient and it’s free to take any allowed number while alpha is selected based on the model you want to try .
+
+So if we take alpha = 0, it will become Ridge and alpha = 1 is LASSO and anything between 0–1 is Elastic net. 
+
+
+L1 Regularization and L2 Regularization
+
+Ridge and Lasso regression are powerful techniques generally used for creating parsimonious models in presence of a ‘large’ number of features. Here ‘large’ can typically mean either of two things:
+
+Large enough to enhance the tendency of a model to overfit (as low as 10 variables might cause overfitting)
+Large enough to cause computational challenges. With modern systems, this situation might arise in case of millions or billions of features
+Though Ridge and Lasso might appear to work towards a common goal, the inherent properties and practical use cases differ substantially. If you’ve heard of them before, you must know that they work by penalizing the magnitude of coefficients of features along with minimizing the error between predicted and actual observations. These are called ‘regularization’ techniques. The key difference is in how they assign penalty to the coefficients:
+
+Ridge Regression:
+Performs L2 regularization, i.e. adds penalty equivalent to square of the magnitude of coefficients
+Minimization objective = LS Obj + α * (sum of square of coefficients)
+Lasso Regression:
+Performs L1 regularization, i.e. adds penalty equivalent to absolute value of the magnitude of coefficients
+Minimization objective = LS Obj + α * (sum of absolute value of coefficients)
+
+In order to create less complex (parsimonious) model when you have a large number of features in your dataset, some of the Regularization techniques used to address over-fitting and feature selection are:
+
+A regression model that uses L1 regularization technique is called Lasso Regression and model which uses L2 is called Ridge Regression.
+The key difference between these two is the penalty term.
+Ridge regression adds “squared magnitude” of coefficient as penalty term to the loss function. Here the highlighted part represents L2 regularization element.
+
+Here, if lambda is zero then you can imagine we get back OLS. However, if lambda is very large then it will add too much weight and it will lead to under-fitting. Having said that it’s important how lambda is chosen. This technique works very well to avoid over-fitting issue.
+
+Lasso Regression (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient as penalty term to the loss function.
+
+Again, if lambda is zero then we will get back OLS whereas very large value will make coefficients zero hence it will under-fit.
+
+The key difference between these techniques is that Lasso shrinks the less important feature’s coefficient to zero thus, removing some feature altogether. So, this works well for feature selection in case we have a huge number of features.
+
+Why do we use Regularization?
+
+Traditional methods like cross-validation, step wise regression to handle over fitting and perform feature selection work well with a small set of features but these techniques are a great alternative when we are dealing with a large set of features.
+
+Gradient Descent Approach
+
+There is also another technique other than regularization which is also used widely to optimize the model and avoid the chances of over fitting in your model, which is called Gradient Descent.
+
+Gradient descent is a technique we can use to find the minimum of arbitrarily complex error functions.
+
+In gradient descent we pick a random set of weights for our algorithm and iteratively adjust those weights in the direction of the gradient of the error with respect to each weight.
+
+As we iterate, the gradient approaches zero and we approach the minimum error.
+
+In machine learning we often use gradient descent with our error function to find the weights that give the lowest errors.
+
+
+
+
+
+
+
+
+Add alt text
+No alt text provided for this image
+Here is an example with a very simple function.
+
+The gradient of this function is given by the following equation. We choose an random initial value for x and a learning rate of 0.1 and then start descent. On each iteration our x value is decreasing and the gradient (2x) is converging towards 0.
+
+The learning rate is a what is know as a hyper-parameter. If the learning rate is too small then convergence may take a very long time. If the learning rate is too large then convergence may never happen because our iterations bounce from one side of the minimum to the other. Choosing a suitable value for hyper-parameters is an art so try different values and plot the results until you find suitable values.
+
+Feel free to criticize! See you in the comments!!!
+
+
+
+
 
 
 
