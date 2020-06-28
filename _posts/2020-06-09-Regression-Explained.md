@@ -9,7 +9,32 @@ excerpt: "Machine Learning Algorithms for Regression"
 # Regression
 
 ## What is Regression?
-Regression is an analysis that assesses whether one or more predictor variables or independent variables explain the dependent (target) variable. 
+
+Regression analysis is a statistical method to model the relationship between a dependent (target) variable and independent (predictor) variables with one or more independent variables. More specifically, Regression analysis helps us to understand how the value of the dependent variable is changing corresponding to an independent variable when other independent variables are held fixed. It predicts continuous/real values such as temperature, age, salary, price, etc.
+
+We can understand the concept of regression analysis using the below example:
+
+**Example:** Suppose there is a marketing company A, who does various advertisement every year and get sales on that. The below list shows the advertisement made by the company in the last 5 years and the corresponding sales:
+
+![example](https://static.javatpoint.com/tutorial/machine-learning/images/regression-analysis-in-machine-learning.png)
+
+
+Now, the company wants to do the advertisement of $200 in the year 2019 and wants to know the prediction about the sales for this year. So to solve such type of prediction problems in machine learning, we need regression analysis.
+
+Regression is a supervised learning technique which helps in finding the correlation between variables and enables us to predict the continuous output variable based on the one or more predictor variables. It is mainly used for prediction, forecasting, time series modeling, and determining the causal-effect relationship between variables.
+
+In Regression, we plot a graph between the variables which best fits the given datapoints, using this plot, the machine learning model can make predictions about the data. In simple words, "Regression shows a line or curve that passes through all the datapoints on target-predictor graph in such a way that the vertical distance between the datapoints and the regression line is minimum." The distance between datapoints and line tells whether a model has captured a strong relationship or not.
+
+### Some examples of regression can be as:
+
+- Prediction of rain using temperature and other factors
+- Determining Market trends
+- Prediction of road accidents due to rash driving.
+
+![examples](https://4.bp.blogspot.com/-IOOxgPaXMVc/Wlj3LWvcnjI/AAAAAAAACKE/UeTFYvAxDmUDel5UBjdifeWaApB3-dXVgCLcBGAs/s1600/img1.jpg)
+
+We can observe that the given plot represents a somehow linear relationship between the mileage and displacement of cars. The green points are the actual observations while the black line fitted is the line of regression
+
 
 ## Linear Regression
 **Linear regression** is a technique used to analyze a **linear relationship** 
@@ -18,6 +43,9 @@ relationship** means that the data points tend to follow a straight line.
 **Simple linear regression** involves only a single input variable. *Figure 1* 
 shows a data set with a linear relationship.
  
+![linreg](https://thumbs.gfycat.com/JointPartialIslandcanary-size_restricted.gif)
+
+
 The idea is to fit a straight line in the n-dimensional space that holds all our observational points. This would constitute forming an equation of the form **y = mx + c**. Because we have multiple variables, we might need to extend this **mx** to be **m<sub>1</sub>x<sub>1</sub>**, **m<sub>2</sub>x<sub>2</sub>** and so on. This extensions results in the following mathematical representation between the independent and dependent variables:
 
 ![eq](http://mathurl.com/y8eahwj3.png)
@@ -102,8 +130,14 @@ Above, we discussed what is Regression and the assumptions or so called limitati
 
 
 ## Multiple Linear Regression
-When there are more than one independent variable (x1,x2,x3...xn) and one dependent variable (y), its called Multiple Linear Regression. Most linear Regressions are multiple linear regression itself.
+When you have only 1 independent variable and 1 dependent variable, it is called simple linear regression.
+When you have more than 1 independent variable and 1 dependent variable, it is called Multiple linear regression.
 
+so, when there are more than one independent variable (x1,x2,x3...xn) and one dependent variable (y), its called Multiple Linear Regression. Most linear Regressions are multiple linear regression itself.
+
+![MLR](https://2.bp.blogspot.com/-xbqTM5K3bIU/WkzhtHMPEmI/AAAAAAAACFs/RULnlMKw_0U14oRWOUcuETJNt9TBYiJEgCLcBGAs/s1600/b.jpg)
+
+Here 'y' is the dependent variable to be estimated, and X are the independent variables and ε is the error term. βi’s are the regression coefficients.
 
 ## Polynomial Linear Regression
 This regression allows us to regress over dependent variable(s) that has a polynomial relationship with the independent variables generally represented.
@@ -114,6 +148,43 @@ This regression allows us to regress over dependent variable(s) that has a polyn
 As we saw, linear regression says, the data should be linear in nature, there must be a linear relationship. But, wait! the real world data is always non-linear. Yes, so, what should we do, should we try to bring non-linearity into the regression model, or check out the residuals and fitted values, or keep applying transformations and working harder and harder to get the best predictive model using linear regression. Yes or No? Now, the question is.. is there any other way to deal with this, so that we can get a better predictive model without getting into these assumptions of linear regression.
 
 Yes! there is a solution, in fact a bunch of solutions.
+
+
+### Polynomial Regression
+It is a technique to fit a nonlinear equation by taking polynomial functions of independent variable.
+In the figure given below, you can see the red curve fits the data better than the green curve. Hence in the situations where the relation between the dependent and independent variable seems to be non-linear we can deploy Polynomial Regression Models.
+
+![example](https://1.bp.blogspot.com/-dODuK8N5h1Q/Wlnyb3V9HFI/AAAAAAAACL4/WxQtCJ1pM5wccDABg4wIrTBUB0vlikXQQCLcBGAs/s1600/poly1.jpg)
+
+Thus a polynomial of degree k in one variable is written as:
+
+![polynomial1](https://1.bp.blogspot.com/-wrJdHn0X_Y8/Wln1K2YZO5I/AAAAAAAACMI/gScVjBesYCY0S4bqUV_tVL6DELUjVcvLwCLcBGAs/s1600/poly2.jpg)
+
+
+Here we can create new features like
+
+![polynomial2](https://2.bp.blogspot.com/-cCV9hGqL9LQ/Wln157jicDI/AAAAAAAACMQ/oiIreV5AsTYAB26KLHAI_fnoxbVMevuNgCLcBGAs/s1600/poly3.jpg)
+
+and can fit linear regression in the similar manner.
+
+In case of multiple variables say X1 and X2, we can create a third new feature (say X3) which is the product of X1 and X2 i.e.
+
+![polynomial3](https://1.bp.blogspot.com/-7PfDLmtSWJk/Wln2md8NJ2I/AAAAAAAACMc/XpDcnrF4Md0jd-jmBXRI5yY_TgMnGWChACLcBGAs/s1600/poly5.jpg)
+
+Disclaimer: It is to be kept in mind that creating unnecessary extra features or fitting polynomials of higher degree may lead to overfitting.
+
+
+### Quantile Regression
+Quantile regression is the extension of linear regression and we generally use it when outliers, high skeweness and heteroscedasticity exist in the data.
+
+In linear regression, we predict the mean of the dependent variable for given independent variables. Since mean does not describe the whole distribution, so modeling the mean is not a full description of a relationship between dependent and independent variables. So we can use quantile regression which predicts a quantile (or percentile) for given independent variables.
+The term "quantile" is the same as "percentile"
+
+#### Advantages of Quantile over Linear Regression
+- Quite beneficial when heteroscedasticity is present in the data.
+- Robust to outliers
+- Distribution of dependent variable can be described via various quantiles.
+- It is more useful than linear regression when the data is skewed.
 
 ### Generalised Regression Model
 
@@ -126,6 +197,7 @@ The bottom line is: You can spend 3 hours playing with the data, generating feat
 Let me explain it using some examples for clear intuition with an example. Linear regression is a linear model, which means it works really nicely when the data has a linear shape. But, when the data has a non-linear shape, then a linear model cannot capture the non-linear features. So in this case, you can use the decision trees, which do a better job at capturing the non-linearity in the data by dividing the space into smaller sub-spaces depending on the rules that exist.
 
 Now, the question is when do you use linear regression vs Trees? Let’s suppose you are trying to predict income. The predictor variables that are available are education, age, and city. Now in a linear regression model, you have an equation with these three attributes. Fine. You’d expect higher degrees of education, higher “age” and larger cities to be associated with higher income. But what about a PhD who is 40 years old and living in Scranton Pennsylvania? Is he likely to earn more than a BS holder who is 35 and living in Upper West SIde NYC? Maybe not. Maybe education totally loses its predictive power in a city like Scranton? Maybe age is a very ineffective, weak variable in a city like NYC?
+
 
 ### Tree based Regression 
 This is where decision trees are handy. The tree can split by city and you get to use a different set of variables for each city. Maybe Age will be a strong second-level split variable in Scranton, but it might not feature at all in the NYC branch of the tree. Education may be a stronger variable in NYC.
@@ -203,6 +275,14 @@ Following are the commonly used methodologies :
 
 Now, there are few ways you can **avoid over fitting your model on training data like cross-validation sampling, reducing number of features, pruning, regularization etc**.
 
+#### Regularization
+Regularization helps to solve over fitting problem which implies model performing well on training data but performing poorly on validation (test) data. Regularization solves this problem by adding a penalty term to the objective function and control the model complexity using that penalty term.
+
+Regularization is generally useful in the following situations:
+Large number of variables
+Low ratio of number observations to number of variables
+High Multi-Collinearity
+
 Regularization basically adds the penalty as model complexity increases. Below is the equation of cost function Regularization parameter (lambda) penalizes all the parameters except intercept so that model generalizes the data and won’t over fit.
 
 A simple linear regression is an equation to estimate y, given a bunch of x. The equation looks something as follows :
@@ -219,11 +299,14 @@ Now, this optimization might simply overfit the equation if x1 , x2 , x3 (indepe
 
 The new term in the equation is the sum of squares of the coefficients (except the bias term) multiplied by the parameter lambda. Lambda = 0 is a super over-fit scenario and Lambda = Infinity brings down the problem to just single mean estimation. Optimizing Lambda is the task we need to solve looking at the trade-off between the prediction accuracy of training sample and prediction accuracy of the hold out sample.
 
+#### How can we choose the regularization parameter λ?
+If we choose lambda = 0 then we get back to the usual OLS estimates. If lambda is chosen to be very large then it will lead to underfitting. Thus it is highly important to determine a desirable value of lambda.To tackle this issue, we plot the parameter estimates against different values of lambda and select the minimum value of λ after which the parameters tend to stabilize.
+
+
 
 ### Ridge, Lasso and Elastic-Net Regression
-Ridge, LASSO and Elastic net algorithms work on same principle. They all try to penalize the Beta coefficients so that we can get the important variables (all in case of Ridge and few in case of LASSO). They shrink the beta coefficient towards zero for unimportant variables. These techniques are well being used when we have more numbers of predictors/features than observations. The only difference between these 3 techniques are the alpha value. If you look into the formula you can find the important of alpha.
 
-
+Ridge, LASSO and Elastic net algorithms work on same principle. They all try to penalize the  coefficients so that we can get the important variables (all in case of Ridge and few in case of LASSO). They shrink the beta coefficient towards zero for unimportant variables. These techniques are well being used when we have more numbers of predictors/features than observations. The only difference between these 3 techniques are the alpha value. If you look into the formula you can find the important of alpha.
 
 Here lambda is the penalty coefficient and it’s free to take any allowed number while alpha is selected based on the model you want to try .
 
@@ -246,6 +329,10 @@ Lasso Regression:
 In order to create less complex (parsimonious) model when you have a large number of features in your dataset, some of the Regularization techniques used to address over-fitting and feature selection are:
 
 A regression model that uses L1 regularization technique is called Lasso Regression and model which uses L2 is called Ridge Regression.
+
+Elastic Net regression is preferred over both ridge and lasso regression when one is dealing with highly correlated independent variables.
+It is a combination of both L1 and L2 regularization.
+
 
 ##### Why do we use Regularization?
 
@@ -282,7 +369,13 @@ The value of ![rsq](http://mathurl.com/3kwwdyh.png) is considered to be better a
 ![](http://mathurl.com/yclkhq5z.png) 
 where **p** is the number of regressors and **n** is the sample size. Adjusted R-squared has a penalizing factor that reduces it's value when a non-significant variable is added to the model.
 > **p-value** based backward elimination can be useful in removing non-significant variables that we might have added in our model initially.
+
+
+
 ![Metrices](https://4.bp.blogspot.com/-wG7IbjTfE6k/XGUvqm7TCVI/AAAAAAAAAZU/vpH1kuKTIooKTcVlnm1EVRCXLVZM9cPNgCLcBGAs/s1600/formula-MAE-MSE-RMSE-RSquared.JPG)
+
+
+---
 
 
 Want to support this project? Contribute..
