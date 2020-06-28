@@ -2,7 +2,7 @@
 title: "Tour of Machine Learning Algorithms"
 layout: post
 category: note
-tags: [resources,data-science,python]
+tags: [resources,ml,deep-learning,algorithms]
 excerpt: "Tour of Machine Learning Algorithms"
 ---
 
