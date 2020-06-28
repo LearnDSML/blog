@@ -1,8 +1,8 @@
 ---
-title: "Classification Explained"
+title: "Classification - Explained"
 layout: post
 category: tutorial
-tags: [resources,data-science,classification]
+tags: [resources,data-science,classification,algorithms]
 excerpt: "Classfication in Machine Learning- Explained"
 ---
 
@@ -80,7 +80,7 @@ In regression, the loss function increases the further you are away from the cor
 
 Let us use anoother example of house price prediction, we can use regression to predict the price of a house depending on the 'size' (sq. feet) and 'location' of the house, the proce will be a 'numerical value'- This relates to regression. Similarly, if instead of the prediction of price, we try to predict the classes such as the price can be classified in labels such as , 'very costly', 'costly', 'affordable', 'cheap', and 'very cheap' - This relates to classification. Each class may correspond to some range of values.
 
-![classificationvsRegression2](https://i1.wp.com/techieswiki.com/wp-content/uploads/2020/02/Classification-vs-regression.jpg?fit=714%2C313&ssl=1)
+![classificationvsRegression2](https://www.researchgate.net/profile/Yves_Matanga2/publication/326175998/figure/fig9/AS:644582983352328@1530691967314/Classification-vs-Regression.png)
 
 ![classificationvsRegression1](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/03/Classification-vs-Regression-Machine-Learning-Interview-Questions-Edureka-1.png)
 
@@ -226,7 +226,7 @@ However, both these reasons come with caveats, which may limit the usefulness of
 
 `prediction bias = average of predictions - average of labels in data set`
 
-
+### Major Metrices with formula and Evaluation focus
 ![Chart](https://cdn-images-1.medium.com/max/1000/1*4Fng5KK0f7LCC-5mrNeV-g.png)
 
 
