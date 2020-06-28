@@ -7,7 +7,7 @@ excerpt: "Curated List of Resources for Data Science with Python"
 ---
 
 # Python Data Science Tutorials 
-- This repo contains a curated list of Python tutorials for Data Science, NLP and Machine Learning.
+- This contains a curated list of Python tutorials for Data Science, NLP and Machine Learning.
 
 ## The Python Language
 - [Python 3 in one picture](https://fossbytes.com/wp-content/uploads/2015/09/python-3-in-one-pic.png)
@@ -252,6 +252,6 @@ excerpt: "Curated List of Resources for Data Science with Python"
 - [python reference - Useful functions, tutorials, and other Python-related things](https://github.com/rasbt/python_reference)
 - [pythonidae - Curated decibans of scientific programming resources in Python](https://github.com/svaksha/pythonidae)
 
-
+---
 Want to support this project? Contribute..
 <a href="https://ko-fi.com/shivampanchal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
