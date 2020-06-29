@@ -40,4 +40,4 @@ In this case, the clustering might return with “fruits with soft skin and lots
 
 Given the subjective nature of clustering tasks, there are various algorithms that suit different types of problems. Each algorithm has its own rules and the mathematics behind how clusters are calculated.
 
-![clustering](/assets/img/types_of_clustering.png)
+[clustering](/assets/img/types_of_clustering.png)
