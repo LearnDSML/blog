@@ -34,6 +34,8 @@ For example, if you built a fruit classifier, it would say “this is an orange,
 **Clustering** is the result of unsupervised learning which means that you’ve seen lots of examples, but don’t have labels.
 In this case, the clustering might return with “fruits with soft skin and lots of dimples”, “fruits with shiny hard skin” and “elongated yellow fruits” based not merely showing lots of fruit to the system, but not identifying the names of different types of fruit. Moreover, they are called clusters
 
+![clusteringvsclassifiation](https://github.com/LearnDSML/blog/blob/master/assets/img/Clustering%26clasification-Animales.webp?raw=true)
+
 ![clustering](https://techdifferences.com/wp-content/uploads/2018/01/Untitled.jpg)
 
 ### Types of Clustering
