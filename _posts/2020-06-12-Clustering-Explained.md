@@ -63,7 +63,7 @@ A broad Classification of types of Clustering Algorithms is given below.
 
 ### Clustering Performance Evaluation
 
-There are various functions with the help of which we can evaluate the performance of clustering algorithms. Following are some important and mostly used functions given by the Scikit-learn for evaluating clustering performance −
+There are various functions with the help of which we can evaluate the performance of clustering algorithms. Following are some important and mostly used functions for evaluating clustering performance −
 
 #### Adjusted Rand Index
 Rand Index is a function that computes a similarity measure between two clustering. For this computation rand index considers all pairs of samples and counting pairs that are assigned in the similar or different clusters in the predicted and true clustering. Afterwards, the raw Rand Index score is ‘adjusted for chance’ into the Adjusted Rand Index score by using the following formula −
@@ -73,11 +73,14 @@ Rand Index is a function that computes a similarity measure between two clusteri
 Perfect labeling would be scored 1 and bad labelling or independent labelling is scored 0 or negative.
 
 #### Mutual Information Based Score
-Mutual Information is a function that computes the agreement of the two assignments. It ignores the permutations. There are following versions available −
+Mutual Information computes the agreement of the two assignments. It ignores the permutations. The Mutual Information score expresses the extent to which observed frequency of co-occurrence differs from what we would expect (statistically speaking). In statistically pure terms this is a measure of the strength of association between words x and y. There are following versions available −
 
-#### Normalized Mutual Information (NMI)
+##### Normalized Mutual Information (NMI)
+Normalized Mutual Information (NMI) is a normalization of the Mutual Information (MI) score to scale the results between 0 (no mutual information) and 1 (perfect correlation). In this function, mutual information is normalized by some generalized mean of H(labels_true) and H(labels_pred)), defined by the average_method.
 
-#### Adjusted Mutual Information (AMI)
+##### Adjusted Mutual Information (AMI)
+Adjusted Mutual Information (AMI) is an adjustment of the Mutual Information (MI) score to account for chance. It accounts for the fact that the MI is generally higher for two clusterings with a larger number of clusters, regardless of whether there is actually more information shared.
+
 #### Fowlkes-Mallows Score
 The Fowlkes-Mallows function measures the similarity of two clustering of a set of points. It may be defined as the geometric mean of the pairwise precision and recall.
 
@@ -104,3 +107,6 @@ and, b is mean nearest-cluster distance.
 
 #### Contingency Matrix
 This matrix will report the intersection cardinality for every trusted pair of (true, predicted). Confusion matrix for classification problems is a square contingency matrix.
+
+
+In next blogs, we will discuss the various algorithms related to Clustering Analysis.
