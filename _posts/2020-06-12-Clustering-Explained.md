@@ -15,7 +15,7 @@ That means the clustering actually consists of two parts: one is to identify the
 
 The ideal result for a clustering algorithm is that two items in the same group are as similar to each other, while two items from different groups are as different as possible.
 
-![clustering](https://programmerbackpack.com/content/images/2020/04/Cluster-example.png)
+![clustering](https://www.tutorialspoint.com/machine_learning_with_python/images/clustering_system.jpg)
 
 It can be used for various things:
 - ✔ Customer segmentation for the purpose of marketing.
@@ -40,7 +40,7 @@ In this case, the clustering might return with “fruits with soft skin and lots
 
 Given the subjective nature of clustering tasks, there are various algorithms that suit different types of problems. Each algorithm has its own rules and the mathematics behind how clusters are calculated. Clustering can be of many types based on Cluster Formation Methods. Followings are some other cluster formation methods −
 
-#### ensity-based
+#### Density-based
 In these methods, the clusters are formed as the dense region. The advantage of these methods is that they have good accuracy as well as good ability to merge two clusters. Ex. Density-Based Spatial Clustering of Applications with Noise (DBSCAN), Ordering Points to identify Clustering structure (OPTICS) etc.
 
 #### Hierarchical-based
@@ -55,4 +55,4 @@ In these methods, the clusters are formed as a grid like structure. The advantag
 
 A broad Classification of types of Claustering Algorithms is following.
 
-![clustering]("https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png")
+![types_of_clustering]("https://raw.githubusercontent.com/LearnDSML/blog/master/assets/img/types_of_clustering.png")
