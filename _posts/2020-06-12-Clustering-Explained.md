@@ -55,4 +55,4 @@ In these methods, the clusters are formed as a grid like structure. The advantag
 
 A broad Classification of types of Claustering Algorithms is following.
 
-![types_of_clustering]("https://raw.githubusercontent.com/LearnDSML/blog/master/assets/img/types_of_clustering.png")
+![types_of_clustering](https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png?raw=true)
