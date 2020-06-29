@@ -53,6 +53,6 @@ In these methods, the clusters are formed by portioning the objects into k clust
 In these methods, the clusters are formed as a grid like structure. The advantage of these methods is that all the clustering operation done on these grids are fast and independent of the number of data objects. Ex. Statistical Information Grid (STING), Clustering in Quest (CLIQUE).
 
 
-A broad Classification of types of Claustering Algorithms is following.
+A broad Classification of types of Clustering Algorithms is given below.
 
 ![types_of_clustering](https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png?raw=true)
