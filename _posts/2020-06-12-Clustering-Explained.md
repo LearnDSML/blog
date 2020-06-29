@@ -1,7 +1,9 @@
 ---
 title: "Clustering Explained"
+layout: post
 categories: tutorial
 tags: [clustering, ml, algorithms]
+excerpt: "Clustering in Machine Learning- Explained"
 ---
 
 
@@ -110,3 +112,8 @@ This matrix will report the intersection cardinality for every trusted pair of (
 
 
 In next blogs, we will discuss the various algorithms related to Clustering Analysis.
+
+---
+
+Want to support this project? Contribute..
+<a href="https://ko-fi.com/shivampanchal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
