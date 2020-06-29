@@ -38,6 +38,21 @@ In this case, the clustering might return with “fruits with soft skin and lots
 
 ### Types of Clustering
 
-Given the subjective nature of clustering tasks, there are various algorithms that suit different types of problems. Each algorithm has its own rules and the mathematics behind how clusters are calculated.
+Given the subjective nature of clustering tasks, there are various algorithms that suit different types of problems. Each algorithm has its own rules and the mathematics behind how clusters are calculated. Clustering can be of many types based on Cluster Formation Methods. Followings are some other cluster formation methods −
 
-![clustering](https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png)
+#### ensity-based
+In these methods, the clusters are formed as the dense region. The advantage of these methods is that they have good accuracy as well as good ability to merge two clusters. Ex. Density-Based Spatial Clustering of Applications with Noise (DBSCAN), Ordering Points to identify Clustering structure (OPTICS) etc.
+
+#### Hierarchical-based
+In these methods, the clusters are formed as a tree type structure based on the hierarchy. They have two categories namely, Agglomerative (Bottom up approach) and Divisive (Top down approach). Ex. Clustering using Representatives (CURE), Balanced iterative Reducing Clustering using Hierarchies (BIRCH) etc.
+
+#### Partitioning
+In these methods, the clusters are formed by portioning the objects into k clusters. Number of clusters will be equal to the number of partitions. Ex. K-means, K-mediodes, PAM, Clustering Large Applications based upon randomized Search (CLARANS) etc.
+
+#### Grid
+In these methods, the clusters are formed as a grid like structure. The advantage of these methods is that all the clustering operation done on these grids are fast and independent of the number of data objects. Ex. Statistical Information Grid (STING), Clustering in Quest (CLIQUE).
+
+
+A broad Classification of types of Claustering Algorithms is following.
+
+![clustering]("https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png")
