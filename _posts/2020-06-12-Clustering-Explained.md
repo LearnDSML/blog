@@ -36,7 +36,7 @@ In this case, the clustering might return with “fruits with soft skin and lots
 
 ![clusteringvsclassifiation](https://github.com/LearnDSML/blog/blob/master/assets/img/Clustering%26clasification-Animales.webp?raw=true)
 
-![clustering](https://techdifferences.com/wp-content/uploads/2018/01/Untitled.jpg)
+![clustering](https://github.com/LearnDSML/blog/blob/master/assets/img/ClassificationvsClustering.png?raw=true)
 
 ### Types of Clustering
 
@@ -58,3 +58,49 @@ In these methods, the clusters are formed as a grid like structure. The advantag
 A broad Classification of types of Clustering Algorithms is given below.
 
 ![types_of_clustering](https://github.com/LearnDSML/blog/blob/master/assets/img/types_of_clustering.png?raw=true)
+
+
+
+### Clustering Performance Evaluation
+
+There are various functions with the help of which we can evaluate the performance of clustering algorithms. Following are some important and mostly used functions given by the Scikit-learn for evaluating clustering performance −
+
+#### Adjusted Rand Index
+Rand Index is a function that computes a similarity measure between two clustering. For this computation rand index considers all pairs of samples and counting pairs that are assigned in the similar or different clusters in the predicted and true clustering. Afterwards, the raw Rand Index score is ‘adjusted for chance’ into the Adjusted Rand Index score by using the following formula −
+
+> AdjustedRI=(RI−Expected−RI)/(max(RI)−Expected−RI)
+
+Perfect labeling would be scored 1 and bad labelling or independent labelling is scored 0 or negative.
+
+#### Mutual Information Based Score
+Mutual Information is a function that computes the agreement of the two assignments. It ignores the permutations. There are following versions available −
+
+#### Normalized Mutual Information (NMI)
+
+#### Adjusted Mutual Information (AMI)
+#### Fowlkes-Mallows Score
+The Fowlkes-Mallows function measures the similarity of two clustering of a set of points. It may be defined as the geometric mean of the pairwise precision and recall.
+
+Mathematically,
+
+> FMS=TP/√(TP+FP)(TP+FN)
+
+Here, TP = True Positive − number of pair of points belonging to the same clusters in true as well as predicted labels both.
+
+FP = False Positive − number of pair of points belonging to the same clusters in true labels but not in the predicted labels.
+
+FN = False Negative − number of pair of points belonging to the same clusters in the predicted labels but not in the true labels.
+
+#### Silhouette Coefficient
+The Silhouette function will compute the mean Silhouette Coefficient of all samples using the mean intra-cluster distance and the mean nearest-cluster distance for each sample.
+
+Mathematically,
+
+> S=(b−a)/max(a,b)
+Here, a is intra-cluster distance.
+
+and, b is mean nearest-cluster distance.
+
+
+#### Contingency Matrix
+This matrix will report the intersection cardinality for every trusted pair of (true, predicted). Confusion matrix for classification problems is a square contingency matrix.
