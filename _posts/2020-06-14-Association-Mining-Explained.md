@@ -1,9 +1,9 @@
 ---
-title: "Data Science with R"
+title: "Association Rule Mining - Explained"
 layout: post
-category: note
-tags: [resources,data-science,R-language]
-excerpt: "Curated List of Resources for Data Science with R"
+category: tutorial
+tags: [ml,algorithms]
+excerpt: "Association Rule Mining - Explained"
 ---
 
 
