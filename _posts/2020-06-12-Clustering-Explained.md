@@ -1,7 +1,7 @@
 ---
 title: "Clustering Explained"
 layout: post
-categories: tutorial
+category: tutorial
 tags: [clustering, ml, algorithms]
 excerpt: "Clustering in Machine Learning- Explained"
 ---
