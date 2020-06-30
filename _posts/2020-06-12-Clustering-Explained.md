@@ -1,5 +1,5 @@
 ---
-title: "Clustering Explained"
+title: "Clustering - Explained"
 layout: post
 category: tutorial
 tags: [clustering, ml, algorithms]
