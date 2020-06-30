@@ -69,7 +69,7 @@ Simple rule looks like -
 I = {milk, bread, butter, beer, diapers}
 D is as shown below:
 
-![example](https://github.com/LearnDSML/blog/blob/master/assets/img/example.png)
+![example](https://github.com/LearnDSML/blog/blob/master/assets/img/example.png?raw=true)
 
 Rule: **{butter, bread} ⇒ {milk}**, meaning that if butter and bread are bought, customers also buy milk.
 
@@ -118,6 +118,8 @@ The algorithm, as one would intuitively assume it to, works as follows:
 2. Select all subsets of transactions having support more than the minimum support
 3. Sort these subsets by decreasing order of support
 
+![apriori_eclat](https://github.com/LearnDSML/blog/blob/master/assets/img/apr_eclat.png?raw=true)
+
 
 ### Frequent-Pattern Growth: (FP)
 Frequent-Pattern Growth algorithm works in the following manner-
@@ -136,6 +138,7 @@ Frequent-Pattern Growth algorithm works in the following manner-
 - Not for interactive or incremental mining.
 - Resulting FP-Tree is not unique for same logical database.
 
+![apriori_fp](https://github.com/LearnDSML/blog/blob/master/assets/img/apr_fp.png?raw=true)
 
 
 
