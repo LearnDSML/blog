@@ -9,8 +9,46 @@ excerpt: "Time Series Analysis - Explained"
 
 # Introduction
 
-How is time series different than any other data? It is because it contains a variable *Time*. It is an continuous ordered variable though. Therefore, we would need to anchor ourselves at some point, and we could call this anchor 0 (denoting the present), then we can represent the future as T+1, T+2... and the past as T-1, T-2 ... In order to build a model and have accurate predictions, we would usually want to have 50 or more degrees of freedom. 
-> Note: Degrees of freedom are usually pieces of independent information. Calculating a mean or any other non-parameter and including it in the model would cause us to lose a degree of freedom.
+A times series is a set of data recorded at regular times. For example, you might record the outdoor temperature at noon every day for a year.
+
+The movement of the data over time may be due to many independent factors.
+
+**Long term trend**: the overall movement or general direction of the data, ignoring any short term effects such as cyclical or seasonal variations. For example, the enrollment trend at a particular university may be a steady climb on average over the past 100 years. This trend may be present despite having a few years of loss or stagnant enrollment followed by years of rapid growth.
+**Cyclical Movements**: Relatively long term patterns of oscillation in the data. These cycles may take many years to play out. There is a various cycles in business economics, some taking 6 years, others taking half a century or more.
+**Seasonal Variation**: Predictable patterns of ups and downs that occur within a single year and repeat year after year. Temperatures typically show seasonal variation, dropping in the Fall and Winter and rising again in the Spring and Summer.
+**Noise**: Every set of data has noise. These are random fluctuations or variations due to uncontrolled factors.
+
+## Putting the Factors Together
+Each factor has an associated data series:
+
+- Trend factor: Tt
+- Cyclic factor: Ct
+- Seasonal factor: St
+- Noise factor: Nt
+Finally, the original data series, Yt, consists of the product of the individual factors.
+
+> Yt = Tt × Ct × St × Nt
+
+Often only one of the oscillating factors, Ct or St, is needed.
+
+## Forecasting
+The idea behind forecasting is to predict future values of data based on what happened before. It’s not a perfect science, because there are typically many factors outside of our control which could affect the future values substantially. The further into the future you want to forecast, the less certain you can be of your prediction.
+
+Just look at weather reporting! Figuring out if it will rain tomorrow is not too difficult, but it’s virtually impossible to predict if it will rain exactly a month from now.
+
+![ts](https://github.com/LearnDSML/blog/blob/master/assets/img/ts1.jpg?raw=true)
+
+Basically, the theory behind a forecast is as follows.
+
+1. Smooth out all of the cyclical, seasonal, and noise components so that only the overall trend remains.
+2. Find an appropriate regression model for the trend. Simple linear regression often does the trick nicely. 
+3. Estimate the cyclical and seasonal variations of the original data.
+4. Factor the cyclical and seasonal variations back into the regression model.
+5. Obtain estimates of error (confidence intervals). The larger the noise factor, the less certain the forecasted data will be.
+
+
+
+
 
 # Key Terms
 
