@@ -61,7 +61,7 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
 ### 2.1. Similarity based methods
 
-<img src="assests/Resources/recommender/cf_nb_sim.png" width=500>
+<img src="assets/Resources/recommender/cf_nb_sim.png" width=500>
 
 - **Pearson's correlation coefficient**
 
@@ -121,7 +121,7 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
 ### 2.2. Distance based methods
 
-<img src="assests/Resources/recommender/cf_nb_dis.png" width=500> <br>
+<img src="assets/Resources/recommender/cf_nb_dis.png" width=500> <br>
 [This is a great article](http://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/) on some popular distance metrics.
 
 Note: It is important to have all data be in the same scale. E.g., if some measures are on a 5 point scale, while others are on a 100 point scale.
@@ -140,7 +140,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     <a href="https://www.codecogs.com/eqnedit.php?latex=$$&space;MANHATTAN(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}|x_i&space;-&space;y_i|}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$&space;MANHATTAN(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}|x_i&space;-&space;y_i|}$$" title="$$ MANHATTAN(\textbf{x}, \textbf{y}) = \sqrt{\sum\limits_{i=1}^{n}|x_i - y_i|}$$" /></a>
 
-    <img src="assests/Resources/recommender/cf_nb_distances.png" width=200> <br>
+    <img src="assets/Resources/recommender/cf_nb_distances.png" width=200> <br>
     The blue line gives the Manhattan distance, while the green line gives the Euclidean distance between two points.
 
 ### 2.3. Making recommendations
@@ -174,7 +174,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     When performing SVD, we create a matrix of users by items, with user ratings for each item scattered throughout the matrix. Using SVD on this matrix, we can find **latent features** related to the users and items.
 
-    <img src="assests/Resources/recommender/svd_matrix_real.png" width=400>
+    <img src="assets/Resources/recommender/svd_matrix_real.png" width=400>
 
     Latent factor is a feature that isn't observed in the data, but can be inferred based on the relationships that occur.
 
@@ -190,7 +190,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     <a href="https://www.codecogs.com/eqnedit.php?latex=$A&space;=&space;U&space;\Sigma&space;V^T$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$A&space;=&space;U&space;\Sigma&space;V^T$" title="$A = U \Sigma V^T$" /></a>
 
-    <img src="assests/Resources/recommender/svd_algorithm.png" width=600>
+    <img src="assets/Resources/recommender/svd_algorithm.png" width=600>
 
     Consider reducing the number of latent features
 
@@ -211,9 +211,9 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     To deal with missing values, use gradient descent to find the SVD matrices.
 
-    <img src="assests/Resources/recommender/svd_gd.png" width=270>
+    <img src="assets/Resources/recommender/svd_gd.png" width=270>
 
-    <img src="assests/Resources/recommender/svd_gd_update.png" width=600>
+    <img src="assets/Resources/recommender/svd_gd_update.png" width=600>
 
 - Pros and cons
 
@@ -229,7 +229,7 @@ Therefore, other methods such as rank-based and content-based recommenders are t
 
 ### 3.5. Explicit vs. implicit ratings
 
-<img src="assests/Resources/recommender/explicit_vs_implicit_ratings.png" width=500>
+<img src="assets/Resources/recommender/explicit_vs_implicit_ratings.png" width=500>
 
 When evaluating implicit ratings, use rank measure instead of RMSE.
 
@@ -243,11 +243,11 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
 
     We can pull out the content related variables from the dataset. Then we can obtain a matrix of how similar movies are to one another by taking the dot product of this matrix with itself.  Notice below that the dot product where our 1 values overlap gives a value of 2 indicating higher similarity.  In the second dot product, the 1 values don't match up.  This leads to a dot product of 0 indicating lower similarity.
 
-    <img src="assests/Resources/recommender/cf_nb_sim_mat1.png" alt="Dot Product" width="380" height="200">
+    <img src="assets/Resources/recommender/cf_nb_sim_mat1.png" alt="Dot Product" width="380" height="200">
 
     We can perform the dot product on a matrix of movies with content characteristics to provide a movie by movie matrix where each cell is an indication of how similar two movies are to one another.  In the below image, you can see that movies 1 and 8 are most similar, movies 2 and 8 are most similar, and movies 3 and 9 are most similar for this subset of the data.  The diagonal elements of the matrix will contain the similarity of a movie with itself, which will be the largest possible similarity (and will also be the number of 1's in the movie row within the orginal movie content matrix).
 
-    <img src="assests/Resources/recommender/cf_nb_sim_mat2.png" alt="Dot Product" width="290">
+    <img src="assets/Resources/recommender/cf_nb_sim_mat2.png" alt="Dot Product" width="290">
 
 ## 5. Applications
 
@@ -266,7 +266,6 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
   - How do you word the questions?
   - And finally, what type of scale should you use?
 
-- [An overview of types of ratings and when to use them](https://conversionxl.com/blog/survey-response-scales/)
 
 ### 5.3. Business goals of recommendations
 
@@ -277,7 +276,6 @@ In general, recommendations are important because they are often central to driv
 - Serendipity - How surprising are the relevant recommendations?
 - Diversity - How dissimilar are the recommendations?
 
-[In this article](https://gab41.lab41.org/recommender-systems-its-not-all-about-the-accuracy-562c7dceeaff), Lab41 shows how they worked to quantify these metrics.
 
 ### 5.4. Validating recommendations
 
