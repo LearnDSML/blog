@@ -53,7 +53,7 @@ Often blended techniques of all three types are used in practice to provide the 
 It is worth noting that two vectors could be similar by similarity metrics while being incredibly, incredibly different by distance metrics. Understanding your specific situation will assist in understanding whether your metric is appropriate.
 
 ### 2.1. Similarity based methods
-![image1](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim.png?raw=true)
+![image1](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/cf_nb_sim.png?raw=true)
 
 - **Pearson's correlation coefficient**
 
@@ -75,18 +75,12 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
 ### 2.2. Distance based methods
 
-![image2](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_dis.png?raw=true)
-
-Note: It is important to have all data be in the same scale. E.g., if some measures are on a 5 point scale, while others are on a 100 point scale.
+![image2](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/cf_nb_dis.png?raw=true)
 
 - **Euclidean Distance**
 
-    Euclidean distance can be considered as straight-line distance between two vectors. For two vectors **x** and **y**, we can compute this as:
-
-
 - **Manhattan Distance**
 
-    Different from euclidean distance, Manhattan distance is a 'manhattan block' distance from one vector to another.  Therefore, you can imagine this distance as a way to compute the distance between two points when you are not able to go through buildings.
 
 ![Distances1](https://dh2016.adho.org/abstracts/static/data/290/10000201000007AF000007CFCCC81279FE2EA7FD.png?raw=true)
 ![Distances2](https://iq.opengenus.org/content/images/2018/12/distance.jpg?raw=true)
@@ -119,7 +113,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     When performing SVD, we create a matrix of users by items, with user ratings for each item scattered throughout the matrix. Using SVD on this matrix, we can find **latent features** related to the users and items.
 
-![image4](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_matrix_real.png?raw=true)
+![image4](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/svd_matrix_real.png?raw=true)
 
     Latent factor is a feature that isn't observed in the data, but can be inferred based on the relationships that occur.
 
@@ -131,7 +125,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
 - **SVD algorithm**
 
-![image5](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_algorithm.png?raw=true)
+![image5](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/svd_algorithm.png?raw=true)
 
     Consider reducing the number of latent features
 
@@ -152,9 +146,9 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     To deal with missing values, use gradient descent to find the SVD matrices.
 
-![image6](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd.png?raw=true)
+![image6](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/svd_gd.png?raw=true)
 
-![image7](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd_update.png?raw=true)
+![image7](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/svd_gd_update.png?raw=true)
 
 - Pros and cons
 
@@ -170,7 +164,7 @@ Therefore, other methods such as rank-based and content-based recommenders are t
 
 ### 3.5. Explicit vs. implicit ratings
 
-![image8](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/explicit_vs_implicit_ratings.png?raw=true)
+![image8](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/explicit_vs_implicit_ratings.png?raw=true)
 
 When evaluating implicit ratings, use rank measure instead of RMSE.
 
@@ -184,11 +178,11 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
 
     We can pull out the content related variables from the dataset. Then we can obtain a matrix of how similar movies are to one another by taking the dot product of this matrix with itself.  Notice below that the dot product where our 1 values overlap gives a value of 2 indicating higher similarity.  In the second dot product, the 1 values don't match up.  This leads to a dot product of 0 indicating lower similarity.
 
-![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat1.png?raw=true)
+![image9](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/cf_nb_sim_mat1.png?raw=true)
 
     We can perform the dot product on a matrix of movies with content characteristics to provide a movie by movie matrix where each cell is an indication of how similar two movies are to one another.  In the below image, you can see that movies 1 and 8 are most similar, movies 2 and 8 are most similar, and movies 3 and 9 are most similar for this subset of the data.  The diagonal elements of the matrix will contain the similarity of a movie with itself, which will be the largest possible similarity (and will also be the number of 1's in the movie row within the orginal movie content matrix).
 
-![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat2.png?raw=true)
+![image9](https://github.com/LearnDSML/blog/blob/master/assets/Resources/recommender/cf_nb_sim_mat2.png?raw=true)
 
 ## 5. Applications
 
