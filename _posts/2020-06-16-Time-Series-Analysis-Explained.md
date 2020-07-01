@@ -60,6 +60,10 @@ There are a few key terms that are commonly encountered when working with Time S
 **Sesonality**: If a TS has a regular repeating pattern based on the calendar or clock, then we call it to have seasonality. Soemtimes there can be different amount of seasonal variation across years, and in such cases it is ideal to take the **log** of values in order to get a better idea about seasonality. It is noteworthy that Annual Data would rarely have a seasonal component.
 ![TS with a seasonal component](http://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/_images/image5.png)
 
+![ts](https://github.com/LearnDSML/blog/blob/master/assets/img/2.png?raw=true)
+
+
+
 **Cyclical TS**: Cyclical patterns are irregular based on calendar or clock. In these cases there are trends in the Time Series that are of irregular lengths, like business data, there can be revenue gain or loss due to a bad product but how long the upward or downward trend would last, is unknown beforehand. Often, when a plot shows cyclical behavior, it would be a combination of big and small cycles. Also, these are very difficult to model because there is no specific pattern and we do not know what would happen next.  
 ![TS with cyclical patterns](http://slideplayer.com/8134442/25/images/8/Components+of+Time+Series+Data.jpg)
 
@@ -195,14 +199,6 @@ We can also do an STL analysis which would give us the seasonality, trend and re
 > Both can be used to remove seasonality 
 > 
 
-# Forecasting
-
-1. Report to te same level of significacne as the original data
-2. Useall dp when doing calculations for the predictions
-3. **Only round at the end**
-4. Use units where available
-
-![](http://mathurl.com/yclyh8k8.png)
 
 
 
