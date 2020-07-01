@@ -1,4 +1,12 @@
-Recommendation-Engines-Explained
+---
+title: "Recommendation-Engines-Explained"
+layout: post
+category: tutorial
+tags: [ml,algorithms]
+excerpt: "Recommendation-Engines-Explained"
+---
+
+
 
 # Overview
 
@@ -45,8 +53,7 @@ Often blended techniques of all three types are used in practice to provide the 
 It is worth noting that two vectors could be similar by similarity metrics while being incredibly, incredibly different by distance metrics. Understanding your specific situation will assist in understanding whether your metric is appropriate.
 
 ### 2.1. Similarity based methods
-
-![image1](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim.png)
+![image1](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim.png?raw=true)
 
 - **Pearson's correlation coefficient**
 
@@ -68,7 +75,7 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
 ### 2.2. Distance based methods
 
-![image2](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_dis.png)
+![image2](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_dis.png?raw=true)
 
 Note: It is important to have all data be in the same scale. E.g., if some measures are on a 5 point scale, while others are on a 100 point scale.
 
@@ -81,8 +88,8 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     Different from euclidean distance, Manhattan distance is a 'manhattan block' distance from one vector to another.  Therefore, you can imagine this distance as a way to compute the distance between two points when you are not able to go through buildings.
 
-![Distances1](https://dh2016.adho.org/abstracts/static/data/290/10000201000007AF000007CFCCC81279FE2EA7FD.png)
-![Distances2](https://iq.opengenus.org/content/images/2018/12/distance.jpg)
+![Distances1](https://dh2016.adho.org/abstracts/static/data/290/10000201000007AF000007CFCCC81279FE2EA7FD.png?raw=true)
+![Distances2](https://iq.opengenus.org/content/images/2018/12/distance.jpg?raw=true)
 
 
 ### 2.3. Making recommendations
@@ -99,10 +106,6 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     - Other methods for making recommendations using collaborative filtering are based on weighting of the neighbors' ratings based on the 'closeness' of the neighbors.
 
-    - Learn more
-
-        [Domino Data Lab Paper](https://blog.dominodatalab.com/recommender-systems-collaborative-filtering/) <br>
-        [Semantic Scholar Paper On Weighted Ratings](https://pdfs.semanticscholar.org/3e9e/bcd9503ef7375c7bb334511804d1e45127e9.pdf)
 
 - Item-based collaborative filtering
 
@@ -116,7 +119,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     When performing SVD, we create a matrix of users by items, with user ratings for each item scattered throughout the matrix. Using SVD on this matrix, we can find **latent features** related to the users and items.
 
-![image4](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_matrix_real.png)
+![image4](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_matrix_real.png?raw=true)
 
     Latent factor is a feature that isn't observed in the data, but can be inferred based on the relationships that occur.
 
@@ -128,11 +131,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
 - **SVD algorithm**
 
-    If we let A be our user-item matrix, we can write the decomposition of that matrix in the following way.
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$A&space;=&space;U&space;\Sigma&space;V^T$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$A&space;=&space;U&space;\Sigma&space;V^T$" title="$A = U \Sigma V^T$" /></a>
-
-![image5](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_algorithm.png)
+![image5](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_algorithm.png?raw=true)
 
     Consider reducing the number of latent features
 
@@ -153,9 +152,9 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     To deal with missing values, use gradient descent to find the SVD matrices.
 
-![image6](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd.png)
+![image6](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd.png?raw=true)
 
-![image7](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd_update.png)
+![image7](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd_update.png?raw=true)
 
 - Pros and cons
 
@@ -171,7 +170,7 @@ Therefore, other methods such as rank-based and content-based recommenders are t
 
 ### 3.5. Explicit vs. implicit ratings
 
-![image8](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/explicit_vs_implicit_ratings.png)
+![image8](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/explicit_vs_implicit_ratings.png?raw=true)
 
 When evaluating implicit ratings, use rank measure instead of RMSE.
 
@@ -185,11 +184,11 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
 
     We can pull out the content related variables from the dataset. Then we can obtain a matrix of how similar movies are to one another by taking the dot product of this matrix with itself.  Notice below that the dot product where our 1 values overlap gives a value of 2 indicating higher similarity.  In the second dot product, the 1 values don't match up.  This leads to a dot product of 0 indicating lower similarity.
 
-![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat1.png)
+![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat1.png?raw=true)
 
     We can perform the dot product on a matrix of movies with content characteristics to provide a movie by movie matrix where each cell is an indication of how similar two movies are to one another.  In the below image, you can see that movies 1 and 8 are most similar, movies 2 and 8 are most similar, and movies 3 and 9 are most similar for this subset of the data.  The diagonal elements of the matrix will contain the similarity of a movie with itself, which will be the largest possible similarity (and will also be the number of 1's in the movie row within the orginal movie content matrix).
 
-![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat2.png)
+![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat2.png?raw=true)
 
 ## 5. Applications
 
@@ -201,7 +200,7 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
 
 ### 5.2. Choosing the rating scale
 
-- Some ideas to keep in mind
+- Some ideas to keep in min
 
   - Do you need to ask questions of your user or can you collect data about their interactions with items?
   - If you need to ask questions, how many do you ask?
@@ -218,3 +217,11 @@ In general, recommendations are important because they are often central to driv
 - Serendipity - How surprising are the relevant recommendations?
 - Diversity - How dissimilar are the recommendations?
     
+
+
+
+---
+
+
+Want to support this project? Contribute..
+<a href="https://ko-fi.com/shivampanchal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
