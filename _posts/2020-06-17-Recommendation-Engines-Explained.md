@@ -2,21 +2,24 @@ Recommendation-Engines-Explained
 
 # Overview
 
-Have you ever wondered how Netflix suggests movies to you based on the movies you have already watched? Or how does an e-commerce websites display options such as "Frequently Bought Together"? They may look relatively simple options but behind the scenes, a complex statistical algorithm executes in order to predict these recommendations. Such systems are called Recommender Systems, Recommendation Systems, or Recommendation Engines.
+Have you ever wondered how Netflix suggests movies to you based on the movies you have already watched? Or how does an e-commerce websites display options such as "Frequently Bought Together"? 
+
+
+They may look relatively simple options but behind the scenes, a complex statistical algorithm executes in order to predict these recommendations. Such systems are called Recommender Systems, Recommendation Systems, or Recommendation Engines.
 
 A Recommender System is one of the most famous applications of Data science and Machine learning.
 
 There are basically three types of recommender systems explained in this notebook -
 
-Demographic filtering (Simple Recommender)
-Content-Based Filtering
-Collaborative Filtering
+- Demographic filtering (Simple Recommender)
+- Content-Based Filtering
+- Collaborative Filtering
 
 
 
 # Recommendation Engines
 
-Three main braches of recommenders
+Three main categories of recommenders
 
 - Knowledge Based Recommendations
 - Collaborative Filtering Based Recommendations
@@ -26,24 +29,6 @@ Three main braches of recommenders
 
 Often blended techniques of all three types are used in practice to provide the the best recommendation for a particular circumstance.
 
-- [Recommendation Engines](#recommendation-engines)
-  - [1. Knowledge based recommendation](#1-knowledge-based-recommendation)
-  - [2. Collaborative filtering based recommendation - Neighborhood based](#2-collaborative-filtering-based-recommendation---neighborhood-based)
-    - [2.1. Similarity based methods](#21-similarity-based-methods)
-    - [2.2. Distance based methods](#22-distance-based-methods)
-    - [2.3. Making recommendations](#23-making-recommendations)
-  - [3. Collaborative filtering based recommendation - Model based](#3-collaborative-filtering-based-recommendation---model-based)
-    - [3.1. Latent factors](#31-latent-factors)
-    - [3.2. The original Singular Value Decomposition (SVD)](#32-the-original-singular-value-decomposition-svd)
-    - [3.3. FunkSVD](#33-funksvd)
-    - [3.4. The Cold Start Problem](#34-the-cold-start-problem)
-    - [3.5. Explicit vs. implicit ratings](#35-explicit-vs-implicit-ratings)
-  - [4. Content Based Recommendation](#4-content-based-recommendation)
-  - [5. Applications](#5-applications)
-    - [5.1. Example recommendation applications](#51-example-recommendation-applications)
-    - [5.2. Choosing the rating scale](#52-choosing-the-rating-scale)
-    - [5.3. Business goals of recommendations](#53-business-goals-of-recommendations)
-    - [5.4. Validating recommendations](#54-validating-recommendations)
 
 ## 1. Knowledge based recommendation
 
@@ -61,32 +46,15 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
 ### 2.1. Similarity based methods
 
-<img src="assets/Resources/recommender/cf_nb_sim.png" width=500>
+![image1](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim.png)
 
 - **Pearson's correlation coefficient**
 
-    Pearson's correlation coefficient is a measure related to the strength and direction of a *linear* relationship. If we have two vectors x and y, we can compare their individual elements in the following way to calculate Pearson's correlation coefficient:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$CORR(\textbf{x},&space;\textbf{y})&space;=&space;\frac{\sum\limits_{i=1}^{n}(x_i&space;-&space;\bar{x})(y_i&space;-&space;\bar{y})}{\sqrt{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum\limits_{i=1}^{n}(y_i-\bar{y})^2}}&space;$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$CORR(\textbf{x},&space;\textbf{y})&space;=&space;\frac{\sum\limits_{i=1}^{n}(x_i&space;-&space;\bar{x})(y_i&space;-&space;\bar{y})}{\sqrt{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum\limits_{i=1}^{n}(y_i-\bar{y})^2}}&space;$$" title="$$CORR(\textbf{x}, \textbf{y}) = \frac{\sum\limits_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum\limits_{i=1}^{n}(x_i-\bar{x})^2}\sqrt{\sum\limits_{i=1}^{n}(y_i-\bar{y})^2}} $$" /></a>
-
-    where
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\bar{x}&space;=&space;\frac{1}{n}\sum\limits_{i=1}^{n}x_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\bar{x}&space;=&space;\frac{1}{n}\sum\limits_{i=1}^{n}x_i$$" title="$$\bar{x} = \frac{1}{n}\sum\limits_{i=1}^{n}x_i$$" /></a>
-
+    Pearson's correlation coefficient is a measure related to the strength and direction of a *linear* relationship. 
+    
 - **Spearman's correlation coefficient**
 
-    Spearman's correlation is what is known as a [non-parametric](https://en.wikipedia.org/wiki/Nonparametric_statistics) statistic, which is a statistic whose distribution doesn't depend on parameters. (Statistics that follow normal distributions or binomial distributions are examples of parametric statistics.) Frequently non-parametric statistics are based on the ranks of data rather than the original values collected. If we map each of our data to ranked data values:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\textbf{x}&space;\rightarrow&space;\textbf{x}^{r}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\textbf{x}&space;\rightarrow&space;\textbf{x}^{r}$$" title="$$\textbf{x} \rightarrow \textbf{x}^{r}$$" /></a> <br>
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\textbf{y}&space;\rightarrow&space;\textbf{y}^{r}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\textbf{y}&space;\rightarrow&space;\textbf{y}^{r}$$" title="$$\textbf{y} \rightarrow \textbf{y}^{r}$$" /></a>
-
-    Here, we let the **r** indicate these are ranked values (this is not raising any value to the power of r). Then we compute Spearman's correlation coefficient as:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$SCORR(\textbf{x},&space;\textbf{y})&space;=&space;\frac{\sum\limits_{i=1}^{n}(x^{r}_i&space;-&space;\bar{x}^{r})(y^{r}_i&space;-&space;\bar{y}^{r})}{\sqrt{\sum\limits_{i=1}^{n}(x^{r}_i-\bar{x}^{r})^2}\sqrt{\sum\limits_{i=1}^{n}(y^{r}_i-\bar{y}^{r})^2}}&space;$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$SCORR(\textbf{x},&space;\textbf{y})&space;=&space;\frac{\sum\limits_{i=1}^{n}(x^{r}_i&space;-&space;\bar{x}^{r})(y^{r}_i&space;-&space;\bar{y}^{r})}{\sqrt{\sum\limits_{i=1}^{n}(x^{r}_i-\bar{x}^{r})^2}\sqrt{\sum\limits_{i=1}^{n}(y^{r}_i-\bar{y}^{r})^2}}&space;$$" title="$$SCORR(\textbf{x}, \textbf{y}) = \frac{\sum\limits_{i=1}^{n}(x^{r}_i - \bar{x}^{r})(y^{r}_i - \bar{y}^{r})}{\sqrt{\sum\limits_{i=1}^{n}(x^{r}_i-\bar{x}^{r})^2}\sqrt{\sum\limits_{i=1}^{n}(y^{r}_i-\bar{y}^{r})^2}} $$" /></a>
-
-    where
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\bar{x}^r&space;=&space;\frac{1}{n}\sum\limits_{i=1}^{n}x^r_i$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\bar{x}^r&space;=&space;\frac{1}{n}\sum\limits_{i=1}^{n}x^r_i$$" title="$$\bar{x}^r = \frac{1}{n}\sum\limits_{i=1}^{n}x^r_i$$" /></a>
+    Spearman's correlation is what is known as a non-parametric statistic, which is a statistic whose distribution doesn't depend on parameters. (Statistics that follow normal distributions or binomial distributions are examples of parametric statistics.) Frequently non-parametric statistics are based on the ranks of data rather than the original values collected.
 
 - **Kendall's Tau**
 
@@ -94,35 +62,13 @@ It is worth noting that two vectors could be similar by similarity metrics while
 
     Similar to both of the previous measures, Kendall's Tau is always between -1 and 1, where -1 suggests a strong, negative relationship between two variables and 1 suggests a strong, positive relationship between two variables.
 
-    Though Spearman's and Kendall's measures are very similar, there are statistical advantages to choosing Kendall's measure in that Kendall's Tau has smaller variability when using larger sample sizes.  However Spearman's measure is more computationally efficient, as Kendall's Tau is O(n^2) and Spearman's correlation is O(nLog(n)). You can find more on this topic in [this thread](https://www.researchgate.net/post/Does_Spearmans_rho_have_any_advantage_over_Kendalls_tau).
+    Though Spearman's and Kendall's measures are very similar, there are statistical advantages to choosing Kendall's measure in that Kendall's Tau has smaller variability when using larger sample sizes.  However Spearman's measure is more computationally efficient, as Kendall's Tau is O(n^2) and Spearman's correlation is O(nLog(n)). 
 
-    We want to map our data to ranks:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\textbf{x}&space;\rightarrow&space;\textbf{x}^{r}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\textbf{x}&space;\rightarrow&space;\textbf{x}^{r}$$" title="$$\textbf{x} \rightarrow \textbf{x}^{r}$$" /></a> <br>
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$\textbf{y}&space;\rightarrow&space;\textbf{y}^{r}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\textbf{y}&space;\rightarrow&space;\textbf{y}^{r}$$" title="$$\textbf{y} \rightarrow \textbf{y}^{r}$$" /></a>
-
-    Then we calculate Kendall's Tau as:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$TAU(\textbf{x},&space;\textbf{y})&space;=&space;\frac{2}{n(n&space;-1)}\sum_{i&space;<&space;j}sgn(x^r_i&space;-&space;x^r_j)sgn(y^r_i&space;-&space;y^r_j)$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$TAU(\textbf{x},&space;\textbf{y})&space;=&space;\frac{2}{n(n&space;-1)}\sum_{i&space;<&space;j}sgn(x^r_i&space;-&space;x^r_j)sgn(y^r_i&space;-&space;y^r_j)$$" title="$$TAU(\textbf{x}, \textbf{y}) = \frac{2}{n(n -1)}\sum_{i < j}sgn(x^r_i - x^r_j)sgn(y^r_i - y^r_j)$$" /></a>
-
-    Where $sgn$ takes the the sign associated with the difference in the ranked values.  An alternative way to write 
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$sgn(x^r_i&space;-&space;x^r_j)$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$sgn(x^r_i&space;-&space;x^r_j)$$" title="$$sgn(x^r_i - x^r_j)$$" /></a>
-
-    is in the following way:
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$&space;\begin{cases}&space;-1&space;&&space;x^r_i&space;<&space;x^r_j&space;\\&space;0&space;&&space;x^r_i&space;=&space;x^r_j&space;\\&space;1&space;&&space;x^r_i&space;>&space;x^r_j&space;\end{cases}&space;$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$&space;\begin{cases}&space;-1&space;&&space;x^r_i&space;<&space;x^r_j&space;\\&space;0&space;&&space;x^r_i&space;=&space;x^r_j&space;\\&space;1&space;&&space;x^r_i&space;>&space;x^r_j&space;\end{cases}&space;$$" title="$$ \begin{cases} -1 & x^r_i < x^r_j \\ 0 & x^r_i = x^r_j \\ 1 & x^r_i > x^r_j \end{cases} $$" /></a>
-
-    Therefore the possible results of 
-
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$sgn(x^r_i&space;-&space;x^r_j)sgn(y^r_i&space;-&space;y^r_j)$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$sgn(x^r_i&space;-&space;x^r_j)sgn(y^r_i&space;-&space;y^r_j)$$" title="$$sgn(x^r_i - x^r_j)sgn(y^r_i - y^r_j)$$" /></a>
-
-    are only 1, -1, or 0, which are summed to give an idea of the proportion of times the ranks of **x** and **y** are pointed in the right direction.
+ 
 
 ### 2.2. Distance based methods
 
-<img src="assets/Resources/recommender/cf_nb_dis.png" width=500> <br>
-[This is a great article](http://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/) on some popular distance metrics.
+![image2](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_dis.png)
 
 Note: It is important to have all data be in the same scale. E.g., if some measures are on a 5 point scale, while others are on a 100 point scale.
 
@@ -130,18 +76,14 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     Euclidean distance can be considered as straight-line distance between two vectors. For two vectors **x** and **y**, we can compute this as:
 
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$&space;EUC(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}(x_i&space;-&space;y_i)^2}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$&space;EUC(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}(x_i&space;-&space;y_i)^2}$$" title="$$ EUC(\textbf{x}, \textbf{y}) = \sqrt{\sum\limits_{i=1}^{n}(x_i - y_i)^2}$$" /></a>
 
-- Manhattan Distance
+- **Manhattan Distance**
 
     Different from euclidean distance, Manhattan distance is a 'manhattan block' distance from one vector to another.  Therefore, you can imagine this distance as a way to compute the distance between two points when you are not able to go through buildings.
 
-    Specifically, this distance is computed as:
+![Distances1](https://dh2016.adho.org/abstracts/static/data/290/10000201000007AF000007CFCCC81279FE2EA7FD.png)
+![Distances2](https://iq.opengenus.org/content/images/2018/12/distance.jpg)
 
-    <a href="https://www.codecogs.com/eqnedit.php?latex=$$&space;MANHATTAN(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}|x_i&space;-&space;y_i|}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$&space;MANHATTAN(\textbf{x},&space;\textbf{y})&space;=&space;\sqrt{\sum\limits_{i=1}^{n}|x_i&space;-&space;y_i|}$$" title="$$ MANHATTAN(\textbf{x}, \textbf{y}) = \sqrt{\sum\limits_{i=1}^{n}|x_i - y_i|}$$" /></a>
-
-    <img src="assets/Resources/recommender/cf_nb_distances.png" width=200> <br>
-    The blue line gives the Manhattan distance, while the green line gives the Euclidean distance between two points.
 
 ### 2.3. Making recommendations
 
@@ -174,7 +116,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     When performing SVD, we create a matrix of users by items, with user ratings for each item scattered throughout the matrix. Using SVD on this matrix, we can find **latent features** related to the users and items.
 
-    <img src="assets/Resources/recommender/svd_matrix_real.png" width=400>
+![image4](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_matrix_real.png)
 
     Latent factor is a feature that isn't observed in the data, but can be inferred based on the relationships that occur.
 
@@ -190,7 +132,7 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     <a href="https://www.codecogs.com/eqnedit.php?latex=$A&space;=&space;U&space;\Sigma&space;V^T$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$A&space;=&space;U&space;\Sigma&space;V^T$" title="$A = U \Sigma V^T$" /></a>
 
-    <img src="assets/Resources/recommender/svd_algorithm.png" width=600>
+![image5](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_algorithm.png)
 
     Consider reducing the number of latent features
 
@@ -211,9 +153,9 @@ Note: It is important to have all data be in the same scale. E.g., if some measu
 
     To deal with missing values, use gradient descent to find the SVD matrices.
 
-    <img src="assets/Resources/recommender/svd_gd.png" width=270>
+![image6](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd.png)
 
-    <img src="assets/Resources/recommender/svd_gd_update.png" width=600>
+![image7](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/svd_gd_update.png)
 
 - Pros and cons
 
@@ -229,7 +171,7 @@ Therefore, other methods such as rank-based and content-based recommenders are t
 
 ### 3.5. Explicit vs. implicit ratings
 
-<img src="assets/Resources/recommender/explicit_vs_implicit_ratings.png" width=500>
+![image8](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/explicit_vs_implicit_ratings.png)
 
 When evaluating implicit ratings, use rank measure instead of RMSE.
 
@@ -243,11 +185,11 @@ When evaluating implicit ratings, use rank measure instead of RMSE.
 
     We can pull out the content related variables from the dataset. Then we can obtain a matrix of how similar movies are to one another by taking the dot product of this matrix with itself.  Notice below that the dot product where our 1 values overlap gives a value of 2 indicating higher similarity.  In the second dot product, the 1 values don't match up.  This leads to a dot product of 0 indicating lower similarity.
 
-    <img src="assets/Resources/recommender/cf_nb_sim_mat1.png" alt="Dot Product" width="380" height="200">
+![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat1.png)
 
     We can perform the dot product on a matrix of movies with content characteristics to provide a movie by movie matrix where each cell is an indication of how similar two movies are to one another.  In the below image, you can see that movies 1 and 8 are most similar, movies 2 and 8 are most similar, and movies 3 and 9 are most similar for this subset of the data.  The diagonal elements of the matrix will contain the similarity of a movie with itself, which will be the largest possible similarity (and will also be the number of 1's in the movie row within the orginal movie content matrix).
 
-    <img src="assets/Resources/recommender/cf_nb_sim_mat2.png" alt="Dot Product" width="290">
+![image9](https://github.com/LearnDSML/blog/tree/master/assets/Resources/recommender/cf_nb_sim_mat2.png)
 
 ## 5. Applications
 
@@ -275,21 +217,4 @@ In general, recommendations are important because they are often central to driv
 - Novelty - How surprising are the recommendations in general?
 - Serendipity - How surprising are the relevant recommendations?
 - Diversity - How dissimilar are the recommendations?
-
-
-### 5.4. Validating recommendations
-
-- Online Testing
-
-    Deploy the recommender and just watch the metrics carefully. It is common in practice to set up online recommendations to have an "old" version of recommended items, which is compared to a new page that uses a new recommendation strategy. A/B test is critical to watching your metrics in online learning, and ultimately, choosing a recommendation strategy that works best for your products and customers.
-
-- Offline Testing
-
-    In many cases, a company might not let you simply deploy your recommendations out into the real world any time you feel like it. Testing out your recommendations in a training-testing environment prior to deploying them is called offline testing. Frequently the training-testing split is based on time, where events earlier in time are in the training data, and events later in time are in a testing dataset.
-
-    Predict how much each user would like each item using a predicted rating. Then we can compare this predicted rating to the actual rating any individual gives to an item in the future.
-
-- User Groups
-
-    Ask user groups give feedback on items you would recommend for them. Obtaining good user groups that are representative of your customers can be a challenge on its own. This is especially true when you have a lot of products and a very large consumer base.
     
